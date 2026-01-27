@@ -1,0 +1,29 @@
+{
+  "lastUpdated": "2025-01-27T00:00:00Z",
+  "weekStart": "2025-01-20",
+  "weekEnd": "2025-01-27",
+  "totalEmails": 0,
+  "byCategory": {
+    "FILM_ONBOARDING": 0,
+    "SCREENING_SETUP": 0,
+    "TECHNICAL_SUPPORT": 0,
+    "PARTNER_COORDINATION": 0,
+    "UNKNOWN": 0
+  },
+  "newQuestions": [
+    {
+      "question": "Example: How do I get my film on multiple platforms?",
+      "category": "FILM_ONBOARDING",
+      "frequency": 3,
+      "suggestedAnswer": "GATHR is non-exclusive, so you can distribute on multiple platforms simultaneously.",
+      "addToFAQ": false
+    }
+  ],
+  "topPatterns": [
+    {
+      "pattern": "ticket access issues",
+      "count": 12,
+      "trend": "stable"
+    }
+  ]
+}

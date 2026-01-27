@@ -1,0 +1,1097 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GATHR Filmmaker Hub</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #0a0a0a;
+            --bg-card: #141414;
+            --bg-card-hover: #1a1a1a;
+            --text-primary: #f5f5f4;
+            --text-secondary: #a8a8a8;
+            --text-muted: #6b6b6b;
+            --accent: #7C5CFF;
+            --accent-hover: #9475FF;
+            --accent-light: rgba(124, 92, 255, 0.1);
+            --accent-border: rgba(124, 92, 255, 0.2);
+            --border: #2a2a2a;
+            --success: #4ade80;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-primary);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.03;
+            pointer-events: none;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        header {
+            padding: 32px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Fraunces', serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            text-decoration: none;
+            letter-spacing: -0.02em;
+        }
+
+        .logo span {
+            color: var(--accent);
+        }
+
+        .header-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            margin-left: 24px;
+            transition: color 0.2s;
+        }
+
+        .header-links a:hover {
+            color: var(--text-primary);
+        }
+
+        .hero {
+            padding: 80px 0 60px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-family: 'Fraunces', serif;
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            font-weight: 600;
+            line-height: 1.15;
+            margin-bottom: 20px;
+            letter-spacing: -0.03em;
+        }
+
+        .hero p {
+            font-size: 1.15rem;
+            color: var(--text-secondary);
+            max-width: 580px;
+            margin: 0 auto;
+        }
+
+        .path-question {
+            text-align: center;
+            padding: 40px 0 32px;
+        }
+
+        .path-question h2 {
+            font-family: 'Fraunces', serif;
+            font-size: 1.5rem;
+            font-weight: 400;
+            color: var(--text-secondary);
+        }
+
+        .paths {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            padding-bottom: 80px;
+        }
+
+        @media (max-width: 768px) {
+            .paths {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .path-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 32px 28px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .path-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--accent);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .path-card:hover {
+            background: var(--bg-card-hover);
+            border-color: #3a3a3a;
+            transform: translateY(-4px);
+        }
+
+        .path-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .path-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--accent-light);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+
+        .path-card h3 {
+            font-family: 'Fraunces', serif;
+            font-size: 1.35rem;
+            font-weight: 600;
+            margin-bottom: 12px;
+            letter-spacing: -0.01em;
+        }
+
+        .path-card p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+        }
+
+        .path-link {
+            color: var(--accent);
+            font-size: 0.9rem;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .path-link svg {
+            transition: transform 0.2s;
+        }
+
+        .path-card:hover .path-link svg {
+            transform: translateX(4px);
+        }
+
+        .section-panel {
+            display: none;
+            padding: 60px 0 80px;
+            animation: fadeIn 0.4s ease;
+        }
+
+        .section-panel.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            text-decoration: none;
+            margin-bottom: 32px;
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+
+        .back-btn:hover {
+            color: var(--text-primary);
+        }
+
+        .section-panel h2 {
+            font-family: 'Fraunces', serif;
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: 16px;
+            letter-spacing: -0.02em;
+        }
+
+        .section-panel > p {
+            color: var(--text-secondary);
+            font-size: 1.05rem;
+            max-width: 600px;
+            margin-bottom: 40px;
+        }
+
+        .quick-answer {
+            background: linear-gradient(135deg, var(--accent-light) 0%, rgba(124, 92, 255, 0.02) 100%);
+            border: 1px solid var(--accent-border);
+            border-radius: 12px;
+            padding: 24px 28px;
+            margin-bottom: 40px;
+        }
+
+        .quick-answer h4 {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--accent);
+            margin-bottom: 12px;
+        }
+
+        .quick-answer p {
+            color: var(--text-primary);
+            font-size: 1rem;
+        }
+
+        .faq-list {
+            margin-bottom: 48px;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid var(--border);
+        }
+
+        .faq-question {
+            width: 100%;
+            background: none;
+            border: none;
+            padding: 24px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            text-align: left;
+        }
+
+        .faq-question h4 {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 1.05rem;
+            font-weight: 500;
+            color: var(--text-primary);
+        }
+
+        .faq-question svg {
+            color: var(--text-muted);
+            transition: transform 0.3s;
+            flex-shrink: 0;
+            margin-left: 16px;
+        }
+
+        .faq-item.open .faq-question svg {
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .faq-item.open .faq-answer {
+            max-height: 500px;
+        }
+
+        .faq-answer-inner {
+            padding-bottom: 24px;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        .faq-answer-inner a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        .faq-answer-inner a:hover {
+            text-decoration: underline;
+        }
+
+        .intake-form {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 36px;
+        }
+
+        .intake-form h3 {
+            font-family: 'Fraunces', serif;
+            font-size: 1.35rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .intake-form > p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin-bottom: 28px;
+        }
+
+        .form-group {
+            margin-bottom: 24px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin-bottom: 8px;
+            color: var(--text-primary);
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 14px 16px;
+            background: var(--bg-dark);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            color: var(--text-primary);
+            font-family: 'DM Sans', sans-serif;
+            font-size: 1rem;
+            transition: border-color 0.2s;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--accent);
+        }
+
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .form-group select {
+            cursor: pointer;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        @media (max-width: 600px) {
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .submit-btn {
+            background: var(--accent);
+            color: white;
+            border: none;
+            padding: 16px 32px;
+            border-radius: 8px;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .submit-btn:hover {
+            background: var(--accent-hover);
+        }
+
+        .troubleshoot-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+            margin-bottom: 48px;
+        }
+
+        @media (max-width: 600px) {
+            .troubleshoot-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .troubleshoot-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+
+        .troubleshoot-card:hover {
+            background: var(--bg-card-hover);
+            border-color: #3a3a3a;
+        }
+
+        .troubleshoot-card h4 {
+            color: var(--text-primary);
+            font-size: 1rem;
+            font-weight: 500;
+            margin-bottom: 8px;
+        }
+
+        .troubleshoot-card p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .still-need-help {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 32px;
+            text-align: center;
+        }
+
+        .still-need-help h4 {
+            font-family: 'Fraunces', serif;
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .still-need-help p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+        }
+
+        .still-need-help a {
+            color: var(--accent);
+            font-weight: 500;
+            text-decoration: none;
+        }
+
+        .still-need-help a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        footer p {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        footer a {
+            color: var(--text-secondary);
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            color: var(--text-primary);
+        }
+
+        .chatbot-fab {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            width: 60px;
+            height: 60px;
+            background: var(--accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 4px 20px rgba(124, 92, 255, 0.4);
+            transition: transform 0.2s, box-shadow 0.2s;
+            z-index: 100;
+        }
+
+        .chatbot-fab:hover {
+            transform: scale(1.08);
+            box-shadow: 0 6px 28px rgba(124, 92, 255, 0.5);
+        }
+
+        .chatbot-fab svg {
+            color: white;
+        }
+
+        /* Weekly Report Badge */
+        .weekly-report-badge {
+            position: fixed;
+            top: 24px;
+            right: 24px;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 12px 16px;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            z-index: 50;
+        }
+
+        .weekly-report-badge strong {
+            color: var(--text-secondary);
+        }
+    </style>
+</head>
+<body>
+    <!-- Weekly Report Badge - Updates automatically -->
+    <div class="weekly-report-badge">
+        Last updated: <strong id="last-updated">Loading...</strong>
+    </div>
+
+    <header>
+        <div class="container header-content">
+            <a href="#" class="logo" onclick="showMain(); return false;">GATHR <span>Filmmaker Hub</span></a>
+            <div class="header-links">
+                <a href="https://support.gathr.com">Full Help Center</a>
+                <a href="https://gathr.com">Go to GATHR</a>
+            </div>
+        </div>
+    </header>
+
+    <main id="main-view">
+        <section class="hero">
+            <div class="container">
+                <h1>Get your film in front of audiences</h1>
+                <p>GATHR connects filmmakers with communities ready to watch. Whether you're distributing your film or hosting a screening, we'll help you get started.</p>
+            </div>
+        </section>
+
+        <section class="path-question">
+            <div class="container">
+                <h2>What brings you here today?</h2>
+            </div>
+        </section>
+
+        <section class="container">
+            <div class="paths">
+                <div class="path-card" onclick="showSection('filmmaker')">
+                    <div class="path-icon">🎬</div>
+                    <h3>I'm a Filmmaker</h3>
+                    <p>Get your film on GATHR for theatrical, non-theatrical, or VOD distribution.</p>
+                    <span class="path-link">
+                        Get started
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </span>
+                </div>
+
+                <div class="path-card" onclick="showSection('host')">
+                    <div class="path-icon">🎪</div>
+                    <h3>I Want to Host a Screening</h3>
+                    <p>Screen a film at your theater, school, church, or community venue.</p>
+                    <span class="path-link">
+                        Learn how
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </span>
+                </div>
+
+                <div class="path-card" onclick="showSection('help')">
+                    <div class="path-icon">🎟️</div>
+                    <h3>I Need Help</h3>
+                    <p>Trouble accessing a ticket, VOD, or screening? Get quick answers here.</p>
+                    <span class="path-link">
+                        Get help
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FILMMAKER SECTION -->
+    <section id="filmmaker-section" class="section-panel">
+        <div class="container">
+            <a class="back-btn" onclick="showMain()">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+                Back
+            </a>
+
+            <h2>Get Your Film on GATHR</h2>
+            <p>GATHR helps independent filmmakers reach audiences through Theatrical On Demand®, non-theatrical screenings, and Video on Demand. Here's what you need to know.</p>
+
+            <div class="quick-answer">
+                <h4>The 30-Second Version</h4>
+                <p>If you have the rights to your film and it's ready for distribution, you can onboard it to GATHR for free. You set your own screening fees and earn revenue when people book your film. No upfront costs, no exclusivity required.</p>
+            </div>
+
+            <div class="faq-list" id="filmmaker-faqs">
+                <!-- FAQs loaded from JSON -->
+            </div>
+
+            <div class="intake-form">
+                <h3>Ready to Get Started?</h3>
+                <p>Tell us about your film and we'll send you next steps within 2 business days.</p>
+
+                <!-- REPLACE WITH HUBSPOT FORM EMBED -->
+                <form id="filmmaker-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="film-title">Film Title *</label>
+                            <input type="text" id="film-title" name="film-title" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="your-name">Your Name *</label>
+                            <input type="text" id="your-name" name="your-name" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="role">Your Role</label>
+                            <select id="role" name="role">
+                                <option value="">Select...</option>
+                                <option value="filmmaker">Filmmaker / Director</option>
+                                <option value="producer">Producer</option>
+                                <option value="distributor">Distributor / Sales Agent</option>
+                                <option value="marketing">Marketing / Publicity</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="distribution-status">Distribution Status *</label>
+                        <select id="distribution-status" name="distribution-status" required>
+                            <option value="">Select...</option>
+                            <option value="self">Self-distributing (I control the rights)</option>
+                            <option value="distributor">Working with a distributor</option>
+                            <option value="seeking">Still seeking distribution</option>
+                            <option value="unsure">Not sure</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="looking-for">What are you looking for? *</label>
+                        <select id="looking-for" name="looking-for" required>
+                            <option value="">Select...</option>
+                            <option value="theatrical">Theatrical On Demand screenings</option>
+                            <option value="non-theatrical">Non-theatrical screenings (schools, churches, etc.)</option>
+                            <option value="vod">Video on Demand</option>
+                            <option value="all">All of the above</option>
+                            <option value="not-sure">Not sure yet - want to learn more</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="film-link">Link to Film or Trailer (optional)</label>
+                        <input type="url" id="film-link" name="film-link" placeholder="https://vimeo.com/...">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="notes">Anything else we should know?</label>
+                        <textarea id="notes" name="notes" placeholder="Timeline, specific goals, questions..."></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-btn">Submit</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- HOST SCREENING SECTION -->
+    <section id="host-section" class="section-panel">
+        <div class="container">
+            <a class="back-btn" onclick="showMain()">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+                Back
+            </a>
+
+            <h2>Host a Film Screening</h2>
+            <p>Bring a film to your community—whether you're a theater, school, church, library, or just someone who wants to gather people around a great story.</p>
+
+            <div class="quick-answer">
+                <h4>The 30-Second Version</h4>
+                <p>Browse films on GATHR, request a screening at your venue, and we'll handle the licensing. You set the ticket price (or make it free), promote to your community, and keep a share of ticket sales. Costs depend on the film and screening type.</p>
+            </div>
+
+            <div class="faq-list" id="host-faqs">
+                <!-- FAQs loaded from JSON -->
+            </div>
+
+            <div class="intake-form">
+                <h3>Request a Screening</h3>
+                <p>Tell us about your screening and we'll help you get set up.</p>
+
+                <!-- REPLACE WITH HUBSPOT FORM EMBED -->
+                <form id="host-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="host-name">Your Name *</label>
+                            <input type="text" id="host-name" name="host-name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="host-email">Email *</label>
+                            <input type="email" id="host-email" name="host-email" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="org-name">Organization Name</label>
+                            <input type="text" id="org-name" name="org-name">
+                        </div>
+                        <div class="form-group">
+                            <label for="org-type">Organization Type *</label>
+                            <select id="org-type" name="org-type" required>
+                                <option value="">Select...</option>
+                                <option value="educational">Educational (.edu)</option>
+                                <option value="nonprofit">Non-Profit</option>
+                                <option value="faith">Faith-Based</option>
+                                <option value="business">Business / For-Profit</option>
+                                <option value="theater">Movie Theater</option>
+                                <option value="individual">Individual / Personal</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="film-interest">Film You Want to Screen *</label>
+                        <input type="text" id="film-interest" name="film-interest" required placeholder="Film title or 'browsing options'">
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="screening-type">Screening Type *</label>
+                            <select id="screening-type" name="screening-type" required>
+                                <option value="">Select...</option>
+                                <option value="theatrical">Theatrical (movie theater)</option>
+                                <option value="non-theatrical">Non-Theatrical (private venue)</option>
+                                <option value="virtual">Virtual / Online</option>
+                                <option value="not-sure">Not sure yet</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="screening-date">Preferred Date (optional)</label>
+                            <input type="text" id="screening-date" name="screening-date" placeholder="e.g., March 2025">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="host-notes">Tell us more about your event</label>
+                        <textarea id="host-notes" name="host-notes" placeholder="Expected audience size, purpose of screening, any questions..."></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-btn">Submit Request</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- HELP SECTION -->
+    <section id="help-section" class="section-panel">
+        <div class="container">
+            <a class="back-btn" onclick="showMain()">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+                Back
+            </a>
+
+            <h2>Get Help</h2>
+            <p>Having trouble with a ticket, VOD rental, or screening? Here are quick solutions to common issues.</p>
+
+            <div class="troubleshoot-grid">
+                <a href="#" class="troubleshoot-card" onclick="event.preventDefault(); openFaq('cant-access');">
+                    <h4>🎟️ Can't access my ticket</h4>
+                    <p>Find your confirmation email or get a new link</p>
+                </a>
+                <a href="#" class="troubleshoot-card" onclick="event.preventDefault(); openFaq('vod-not-playing');">
+                    <h4>📺 VOD not playing</h4>
+                    <p>Troubleshoot video playback issues</p>
+                </a>
+                <a href="#" class="troubleshoot-card" onclick="event.preventDefault(); openFaq('refund');">
+                    <h4>💳 Request a refund</h4>
+                    <p>Learn about our refund policy</p>
+                </a>
+                <a href="#" class="troubleshoot-card" onclick="event.preventDefault(); openFaq('screening-help');">
+                    <h4>🎬 Screening day help</h4>
+                    <p>Technical issues at your event</p>
+                </a>
+            </div>
+
+            <div class="faq-list" id="help-faqs">
+                <!-- FAQs loaded from JSON -->
+            </div>
+
+            <div class="intake-form">
+                <h3>Still Need Help?</h3>
+                <p>Tell us what's going on and we'll get back to you within 1 business day.</p>
+
+                <!-- REPLACE WITH HUBSPOT FORM EMBED -->
+                <form id="help-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="help-name">Your Name *</label>
+                            <input type="text" id="help-name" name="help-name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="help-email">Email *</label>
+                            <input type="email" id="help-email" name="help-email" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="help-type">What do you need help with? *</label>
+                        <select id="help-type" name="help-type" required>
+                            <option value="">Select...</option>
+                            <option value="ticket-access">Can't access my ticket</option>
+                            <option value="vod-access">Can't access my VOD rental</option>
+                            <option value="vod-playback">VOD won't play</option>
+                            <option value="refund">Refund request</option>
+                            <option value="screening-tech">Technical issue at screening</option>
+                            <option value="account">Account issue</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="film-event">Film or Event Name (if applicable)</label>
+                        <input type="text" id="film-event" name="film-event">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="help-details">Describe your issue *</label>
+                        <textarea id="help-details" name="help-details" required placeholder="Please include any error messages, what you've already tried, and when the issue started..."></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-btn">Send</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Chatbot FAB -->
+    <div class="chatbot-fab" onclick="alert('Chatbot coming soon!')">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+        </svg>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>
+                <a href="https://gathr.com">GATHR</a> · 
+                <a href="https://support.gathr.com">Full Help Center</a> · 
+                <a href="mailto:support@gathr.com">support@gathr.com</a>
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // FAQ Data - Anchored questions (edit these manually)
+        const anchoredFAQs = {
+            filmmaker: [
+                {
+                    id: 'fit',
+                    question: 'Is my film a good fit for GATHR?',
+                    answer: 'GATHR works best for documentaries, independent features, faith-based films, and specialty content with built-in audiences. If your film has a community that wants to see it together—whether that\'s a cause, a fandom, a faith group, or a local connection—GATHR can help you reach them. We\'re not a fit for films still in production or those without distribution rights cleared.',
+                    featured: true
+                },
+                {
+                    id: 'cost',
+                    question: 'What does it cost to put my film on GATHR?',
+                    answer: 'Nothing upfront. You onboard your film for free and set your own screening fees. GATHR takes a platform fee from transactions, but you don\'t pay anything until you\'re earning. You retain full control over pricing and availability.',
+                    featured: true
+                },
+                {
+                    id: 'requirements',
+                    question: 'What do I need to get started?',
+                    answer: '<strong>Required:</strong> Film title, synopsis, poster image, trailer (Vimeo link), and either a Vimeo video link or HLS streaming link for the full film.<br><br><strong>For theatrical:</strong> Your film will need a DCP for theater screenings.<br><br><strong>For non-theatrical/VOD:</strong> A Vimeo or HLS link is sufficient.<br><br><a href="https://support.gathr.com/whats-required-to-upload-my-film-to-gathr" target="_blank">See full delivery specs →</a>',
+                    featured: true
+                },
+                {
+                    id: 'screenings',
+                    question: 'How do screenings work?',
+                    answer: '<strong>Theatrical On Demand®:</strong> Fans request screenings at local theaters. When enough tickets sell, the screening happens. Risk-free for everyone.<br><br><strong>Non-Theatrical:</strong> Schools, churches, libraries, and community groups book your film for private screenings. You set the fee.<br><br><strong>VOD:</strong> Audiences rent your film directly. You control pricing, rental windows, and availability.<br><br><a href="https://support.gathr.com/how-to-screen-my-film-on-gathr" target="_blank">Learn more about screening types →</a>',
+                    featured: true
+                },
+                {
+                    id: 'exclusive',
+                    question: 'Do I need to give GATHR exclusive rights?',
+                    answer: 'No. GATHR is non-exclusive. You can (and should) distribute your film through other channels simultaneously. Many filmmakers use GATHR alongside traditional distribution, streaming platforms, and direct sales.',
+                    featured: true
+                }
+            ],
+            host: [
+                {
+                    id: 'types',
+                    question: 'What types of screenings can I host?',
+                    answer: '<strong>Theatrical On Demand®:</strong> Partner with a local movie theater. The screening only happens if enough tickets sell—no risk.<br><br><strong>Non-Theatrical:</strong> Screen at schools, churches, community centers, libraries, or private venues. You pay a licensing fee to the filmmaker.<br><br><strong>Virtual:</strong> Host an online screening with live Q&A via Zoom integration.<br><br><a href="https://support.gathr.com/film-screening-host-toolkit" target="_blank">Full host toolkit →</a>',
+                    featured: true
+                },
+                {
+                    id: 'cost',
+                    question: 'How much does it cost?',
+                    answer: 'It depends on the film and screening type. Each filmmaker sets their own fees. Non-theatrical screenings typically range from $150-$800+ depending on the film, your organization type (educational, non-profit, faith, etc.), and whether you\'re charging admission. You\'ll see the exact fee when you request a screening on GATHR.',
+                    featured: true
+                },
+                {
+                    id: 'discount',
+                    question: 'I\'m a school/non-profit—do I get a discount?',
+                    answer: 'Many filmmakers offer reduced fees for educational institutions and non-profits. When you request a screening, you\'ll identify your organization type, and the system will show you the applicable rate. Educational orgs need a .edu email; non-profits need a verified EIN.',
+                    featured: true
+                },
+                {
+                    id: 'equipment',
+                    question: 'What equipment do I need?',
+                    answer: 'For non-theatrical screenings, you\'ll need: a laptop or device to access the film, HDMI connection to your projector/display (HDCP-compliant), speakers, and a stable internet connection. The film streams through our secure player—no downloads needed.<br><br><a href="https://support.gathr.com/how-to-ensure-your-screening-goes-smoothly-with-hdcp-compliant-equipment" target="_blank">Equipment checklist →</a>',
+                    featured: true
+                },
+                {
+                    id: 'specific-film',
+                    question: 'Can I request a specific film?',
+                    answer: 'If a film is on GATHR, you can request it directly through the platform. If you\'re looking for a specific film that\'s not on GATHR yet, let us know—we may be able to help connect you with the filmmaker. Use the form below to tell us what you\'re looking for.',
+                    featured: true
+                }
+            ],
+            help: [
+                {
+                    id: 'cant-access',
+                    question: 'I can\'t access my ticket or VOD',
+                    answer: '<strong>Step 1:</strong> Check your email (including spam/promotions) for an email from GATHR with your purchase confirmation. The access link is in that email.<br><br><strong>Step 2:</strong> Try logging into <a href="https://gathr.com" target="_blank">gathr.com</a> with the email you used to purchase. Your tickets and rentals should appear in your account.<br><br><strong>Step 3:</strong> If you still can\'t find it, use the form below and we\'ll resend your access link.',
+                    featured: true
+                },
+                {
+                    id: 'vod-not-playing',
+                    question: 'My VOD rental isn\'t playing',
+                    answer: '<strong>Check your rental window:</strong> VOD rentals typically have a viewing period (e.g., 48-72 hours from first play, or a set expiration date). Make sure your rental is still active.<br><br><strong>Try a different browser:</strong> Chrome or Firefox work best. Clear your cache or try incognito mode.<br><br><strong>Check your connection:</strong> VODs require stable internet. Try refreshing or switching networks.<br><br><strong>Smart TV issues?</strong> <a href="https://support.gathr.com/video-on-demand-vod-setup-viewing" target="_blank">See our TV casting guide →</a>',
+                    featured: true
+                },
+                {
+                    id: 'refund',
+                    question: 'I need a refund',
+                    answer: 'Refund policies vary by event and filmmaker. Generally:<br><br>• <strong>Cancelled events:</strong> Automatic full refund<br>• <strong>VOD rentals:</strong> Refunds available if you haven\'t started watching<br>• <strong>Ticket purchases:</strong> Contact us before the event for case-by-case review<br><br>Use the form below to request a refund, or email <a href="mailto:support@gathr.com">support@gathr.com</a>.',
+                    featured: true
+                },
+                {
+                    id: 'screening-help',
+                    question: 'I\'m hosting a screening and need help',
+                    answer: '<strong>Film won\'t play?</strong><br>• Make sure your HDMI cable and display are HDCP-compliant<br>• Try a different browser (Chrome recommended)<br>• Check your internet connection<br>• Disable any VPNs<br><br><strong>Need the screening link?</strong> Check your email for the screening access instructions sent before your event.<br><br><a href="https://support.gathr.com/how-to-play-the-film-at-your-non-theatrical-screening-event" target="_blank">Full screening day guide →</a>',
+                    featured: true
+                }
+            ]
+        };
+
+        // Load weekly report data (new questions from email log)
+        let weeklyReport = {
+            lastUpdated: new Date().toISOString(),
+            newQuestions: []
+        };
+
+        // Try to load weekly report from JSON file
+        fetch('data/weekly-report.json')
+            .then(response => response.json())
+            .then(data => {
+                weeklyReport = data;
+                document.getElementById('last-updated').textContent = new Date(data.lastUpdated).toLocaleDateString();
+            })
+            .catch(() => {
+                document.getElementById('last-updated').textContent = new Date().toLocaleDateString();
+            });
+
+        // Render FAQs
+        function renderFAQs() {
+            ['filmmaker', 'host', 'help'].forEach(section => {
+                const container = document.getElementById(`${section}-faqs`);
+                const faqs = anchoredFAQs[section].filter(f => f.featured);
+                
+                container.innerHTML = faqs.map(faq => `
+                    <div class="faq-item" data-id="${faq.id}">
+                        <button class="faq-question" onclick="toggleFaq(this)">
+                            <h4>${faq.question}</h4>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-inner">${faq.answer}</div>
+                        </div>
+                    </div>
+                `).join('');
+            });
+        }
+
+        // Navigation
+        function showSection(section) {
+            document.getElementById('main-view').style.display = 'none';
+            document.getElementById('filmmaker-section').classList.remove('active');
+            document.getElementById('host-section').classList.remove('active');
+            document.getElementById('help-section').classList.remove('active');
+            
+            document.getElementById(section + '-section').classList.add('active');
+            window.scrollTo(0, 0);
+        }
+
+        function showMain() {
+            document.getElementById('main-view').style.display = 'block';
+            document.getElementById('filmmaker-section').classList.remove('active');
+            document.getElementById('host-section').classList.remove('active');
+            document.getElementById('help-section').classList.remove('active');
+            window.scrollTo(0, 0);
+        }
+
+        function toggleFaq(btn) {
+            const item = btn.closest('.faq-item');
+            const wasOpen = item.classList.contains('open');
+            
+            const section = item.closest('.faq-list');
+            section.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+            
+            if (!wasOpen) {
+                item.classList.add('open');
+            }
+        }
+
+        function openFaq(faqId) {
+            showSection('help');
+            setTimeout(() => {
+                const faqItem = document.querySelector(`[data-id="${faqId}"]`);
+                if (faqItem) {
+                    faqItem.classList.add('open');
+                    faqItem.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }
+            }, 100);
+        }
+
+        // Initialize
+        renderFAQs();
+    </script>
+</body>
+</html>
