@@ -1,4 +1,4 @@
-# GATHR Filmmaker Hub
+# Filmmaker Hub
 
 Self-service landing page for GATHR filmmaker relations. Reduces repetitive email inquiries by providing instant answers and structured intake forms.
 
