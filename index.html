@@ -550,6 +550,169 @@
             color: white;
         }
 
+        /* Tutorial Carousel */
+        .tutorial-section {
+            margin-bottom: 48px;
+        }
+
+        .tutorial-section h3 {
+            font-family: 'Fraunces', serif;
+            font-size: 1.35rem;
+            font-weight: 600;
+            margin-bottom: 24px;
+            color: var(--text-primary);
+        }
+
+        .carousel-container {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .carousel-track {
+            display: flex;
+            gap: 16px;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+            padding: 8px 0;
+        }
+
+        .carousel-track::-webkit-scrollbar {
+            display: none;
+        }
+
+        .tutorial-card {
+            flex: 0 0 260px;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .tutorial-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+        }
+
+        .tutorial-thumbnail {
+            position: relative;
+            width: 100%;
+            height: 140px;
+            background: var(--bg-dark);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .tutorial-thumbnail img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .tutorial-thumbnail .play-icon {
+            position: absolute;
+            width: 48px;
+            height: 48px;
+            background: var(--accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.2s, background 0.2s;
+        }
+
+        .tutorial-card:hover .play-icon {
+            transform: scale(1.1);
+            background: var(--accent-hover);
+        }
+
+        .play-icon svg {
+            color: white;
+            margin-left: 3px;
+        }
+
+        .tutorial-thumbnail .duration {
+            position: absolute;
+            bottom: 8px;
+            right: 8px;
+            background: rgba(0, 0, 0, 0.8);
+            color: var(--text-primary);
+            font-size: 0.75rem;
+            padding: 4px 8px;
+            border-radius: 4px;
+        }
+
+        .tutorial-info {
+            padding: 16px;
+        }
+
+        .tutorial-info h4 {
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: var(--text-primary);
+            margin-bottom: 6px;
+            line-height: 1.3;
+        }
+
+        .tutorial-info p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            line-height: 1.4;
+        }
+
+        .carousel-nav {
+            display: flex;
+            justify-content: flex-end;
+            gap: 8px;
+            margin-top: 16px;
+        }
+
+        .carousel-btn {
+            width: 40px;
+            height: 40px;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.2s;
+            color: var(--text-secondary);
+        }
+
+        .carousel-btn:hover {
+            background: var(--bg-card-hover);
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+
+        .carousel-btn:disabled {
+            opacity: 0.3;
+            cursor: not-allowed;
+        }
+
+        /* Empty state for tutorials */
+        .tutorial-empty {
+            background: var(--bg-card);
+            border: 1px dashed var(--border);
+            border-radius: 12px;
+            padding: 32px;
+            text-align: center;
+            color: var(--text-muted);
+        }
+
+        .tutorial-empty p {
+            font-size: 0.9rem;
+        }
+
         /* Weekly Report Badge */
         .weekly-report-badge {
             position: fixed;
@@ -650,6 +813,24 @@
                 <p>If you have the rights to your film and it's ready for distribution, you can onboard it to GATHR for free. You set your own screening fees and earn revenue when people book your film. No upfront costs, no exclusivity required.</p>
             </div>
 
+            <!-- Tutorial Carousel: Filmmaker -->
+            <div class="tutorial-section">
+                <h3>How do I...?</h3>
+                <div class="carousel-container">
+                    <div class="carousel-track" id="filmmaker-carousel">
+                        <!-- Tutorials loaded via JS -->
+                    </div>
+                    <div class="carousel-nav">
+                        <button class="carousel-btn" onclick="scrollCarousel('filmmaker-carousel', -1)">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+                        </button>
+                        <button class="carousel-btn" onclick="scrollCarousel('filmmaker-carousel', 1)">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
             <div class="faq-list" id="filmmaker-faqs">
                 <!-- FAQs loaded from JSON -->
             </div>
@@ -744,6 +925,24 @@
                 <p>Browse films on GATHR, request a screening at your venue, and we'll handle the licensing. You set the ticket price (or make it free), promote to your community, and keep a share of ticket sales. Costs depend on the film and screening type.</p>
             </div>
 
+            <!-- Tutorial Carousel: Host -->
+            <div class="tutorial-section">
+                <h3>How do I...?</h3>
+                <div class="carousel-container">
+                    <div class="carousel-track" id="host-carousel">
+                        <!-- Tutorials loaded via JS -->
+                    </div>
+                    <div class="carousel-nav">
+                        <button class="carousel-btn" onclick="scrollCarousel('host-carousel', -1)">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+                        </button>
+                        <button class="carousel-btn" onclick="scrollCarousel('host-carousel', 1)">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
             <div class="faq-list" id="host-faqs">
                 <!-- FAQs loaded from JSON -->
             </div>
@@ -828,6 +1027,24 @@
 
             <h2>Get Help</h2>
             <p>Having trouble with a ticket, VOD rental, or screening? Here are quick solutions to common issues.</p>
+
+            <!-- Tutorial Carousel: Help -->
+            <div class="tutorial-section">
+                <h3>Quick Video Guides</h3>
+                <div class="carousel-container">
+                    <div class="carousel-track" id="help-carousel">
+                        <!-- Tutorials loaded via JS -->
+                    </div>
+                    <div class="carousel-nav">
+                        <button class="carousel-btn" onclick="scrollCarousel('help-carousel', -1)">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+                        </button>
+                        <button class="carousel-btn" onclick="scrollCarousel('help-carousel', 1)">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
 
             <div class="troubleshoot-grid">
                 <a href="#" class="troubleshoot-card" onclick="event.preventDefault(); openFaq('cant-access');">
@@ -917,6 +1134,194 @@
     </footer>
 
     <script>
+        // Tutorial Data - Add your Loom links here
+        // thumbnail: Use Loom's auto-generated thumbnail or leave blank for placeholder
+        // url: The Loom share URL
+        // duration: Video length (e.g., "2:30")
+        const tutorials = {
+            filmmaker: [
+                {
+                    id: 'onboard-film',
+                    title: 'Onboard Your Film',
+                    description: 'Step-by-step guide to adding your film to GATHR',
+                    url: '', // Add Loom URL
+                    thumbnail: '', // Add thumbnail URL or leave blank
+                    duration: '3:00'
+                },
+                {
+                    id: 'set-screening-fees',
+                    title: 'Set Your Screening Fees',
+                    description: 'How to configure pricing for theatrical and non-theatrical',
+                    url: '',
+                    thumbnail: '',
+                    duration: '2:30'
+                },
+                {
+                    id: 'upload-film-file',
+                    title: 'Upload Your Film',
+                    description: 'Vimeo setup, HLS links, and delivery specs',
+                    url: '',
+                    thumbnail: '',
+                    duration: '4:00'
+                },
+                {
+                    id: 'create-vod',
+                    title: 'Create a VOD',
+                    description: 'Set up Video on Demand for your film',
+                    url: '',
+                    thumbnail: '',
+                    duration: '2:45'
+                },
+                {
+                    id: 'manage-screenings',
+                    title: 'Manage Screening Requests',
+                    description: 'Using your Screenings Dashboard',
+                    url: '',
+                    thumbnail: '',
+                    duration: '3:15'
+                },
+                {
+                    id: 'track-revenue',
+                    title: 'Track Your Revenue',
+                    description: 'Understanding payouts and analytics',
+                    url: '',
+                    thumbnail: '',
+                    duration: '2:00'
+                }
+            ],
+            host: [
+                {
+                    id: 'find-film',
+                    title: 'Find a Film to Screen',
+                    description: 'Browse the GATHR catalog and request a film',
+                    url: '',
+                    thumbnail: '',
+                    duration: '2:00'
+                },
+                {
+                    id: 'request-screening',
+                    title: 'Request a Screening',
+                    description: 'How to book a film for your venue',
+                    url: '',
+                    thumbnail: '',
+                    duration: '3:00'
+                },
+                {
+                    id: 'setup-event',
+                    title: 'Set Up Your Event Page',
+                    description: 'Customize your screening event details',
+                    url: '',
+                    thumbnail: '',
+                    duration: '2:30'
+                },
+                {
+                    id: 'promote-screening',
+                    title: 'Promote Your Screening',
+                    description: 'Marketing tools and best practices',
+                    url: '',
+                    thumbnail: '',
+                    duration: '3:30'
+                },
+                {
+                    id: 'screening-day',
+                    title: 'Screening Day Checklist',
+                    description: 'Everything you need for a smooth event',
+                    url: '',
+                    thumbnail: '',
+                    duration: '2:45'
+                }
+            ],
+            help: [
+                {
+                    id: 'find-ticket',
+                    title: 'Find Your Ticket',
+                    description: 'How to locate your purchase confirmation',
+                    url: '',
+                    thumbnail: '',
+                    duration: '1:30'
+                },
+                {
+                    id: 'watch-vod',
+                    title: 'Watch Your VOD Rental',
+                    description: 'Accessing and playing your rented film',
+                    url: '',
+                    thumbnail: '',
+                    duration: '2:00'
+                },
+                {
+                    id: 'cast-to-tv',
+                    title: 'Cast to Your TV',
+                    description: 'Watch on the big screen via Chromecast or AirPlay',
+                    url: '',
+                    thumbnail: '',
+                    duration: '2:30'
+                },
+                {
+                    id: 'play-at-screening',
+                    title: 'Play Film at Your Screening',
+                    description: 'Technical setup for hosts on screening day',
+                    url: '',
+                    thumbnail: '',
+                    duration: '3:00'
+                }
+            ]
+        };
+
+        // Render tutorial carousels
+        function renderTutorials() {
+            ['filmmaker', 'host', 'help'].forEach(section => {
+                const container = document.getElementById(`${section}-carousel`);
+                const sectionTutorials = tutorials[section];
+                
+                if (sectionTutorials.length === 0) {
+                    container.innerHTML = `
+                        <div class="tutorial-empty">
+                            <p>Video tutorials coming soon!</p>
+                        </div>
+                    `;
+                    return;
+                }
+
+                container.innerHTML = sectionTutorials.map(tutorial => {
+                    const hasVideo = tutorial.url && tutorial.url.length > 0;
+                    const thumbnailBg = tutorial.thumbnail 
+                        ? `<img src="${tutorial.thumbnail}" alt="${tutorial.title}">`
+                        : '';
+                    
+                    return `
+                        <a href="${hasVideo ? tutorial.url : '#'}" 
+                           target="${hasVideo ? '_blank' : '_self'}"
+                           class="tutorial-card ${!hasVideo ? 'coming-soon' : ''}"
+                           ${!hasVideo ? 'onclick="event.preventDefault(); alert(\'Video coming soon!\')"' : ''}>
+                            <div class="tutorial-thumbnail">
+                                ${thumbnailBg}
+                                <div class="play-icon">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M8 5v14l11-7z"/>
+                                    </svg>
+                                </div>
+                                <span class="duration">${tutorial.duration}</span>
+                            </div>
+                            <div class="tutorial-info">
+                                <h4>${tutorial.title}</h4>
+                                <p>${tutorial.description}</p>
+                            </div>
+                        </a>
+                    `;
+                }).join('');
+            });
+        }
+
+        // Carousel scroll function
+        function scrollCarousel(carouselId, direction) {
+            const carousel = document.getElementById(carouselId);
+            const cardWidth = 276; // card width (260) + gap (16)
+            carousel.scrollBy({
+                left: direction * cardWidth * 2,
+                behavior: 'smooth'
+            });
+        }
+
         // FAQ Data - Anchored questions (edit these manually)
         const anchoredFAQs = {
             filmmaker: [
@@ -1091,6 +1496,7 @@
         }
 
         // Initialize
+        renderTutorials();
         renderFAQs();
     </script>
 </body>
