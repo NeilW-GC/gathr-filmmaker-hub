@@ -1,0 +1,30 @@
+{
+  "lastModified": "2026-02-18T00:00:00Z",
+  "modifiedBy": "system",
+  "filmmaker": {
+    "fit": true,
+    "cost": true,
+    "requirements": true,
+    "delivery-specs": true,
+    "screenings": true,
+    "exclusive": true,
+    "payouts": true
+  },
+  "host": {
+    "types": true,
+    "cost": true,
+    "discount": true,
+    "equipment": true,
+    "specific-film": true,
+    "change-screening": true,
+    "tax-exempt": true
+  },
+  "help": {
+    "cant-access": true,
+    "vod-not-playing": true,
+    "viewing-window": true,
+    "casting-to-tv": true,
+    "refund": true,
+    "screening-help": true
+  }
+}

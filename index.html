@@ -1063,6 +1063,14 @@
                     <h4>🎬 Screening day help</h4>
                     <p>Technical issues at your event</p>
                 </a>
+                <a href="#" class="troubleshoot-card" onclick="event.preventDefault(); openFaq('viewing-window');">
+                    <h4>⏱️ VOD viewing window</h4>
+                    <p>How long you have to watch your rental</p>
+                </a>
+                <a href="#" class="troubleshoot-card" onclick="event.preventDefault(); openFaq('casting-to-tv');">
+                    <h4>📺 Watch on your TV</h4>
+                    <p>Chromecast, AirPlay, and HDMI setup</p>
+                </a>
             </div>
 
             <div class="faq-list" id="help-faqs">
@@ -1322,99 +1330,9 @@
             });
         }
 
-        // FAQ Data - Anchored questions (edit these manually)
-        const anchoredFAQs = {
-            filmmaker: [
-                {
-                    id: 'fit',
-                    question: 'Is my film a good fit for GATHR?',
-                    answer: 'GATHR works best for documentaries, independent features, faith-based films, and specialty content with built-in audiences. If your film has a community that wants to see it together—whether that\'s a cause, a fandom, a faith group, or a local connection—GATHR can help you reach them. We\'re not a fit for films still in production or those without distribution rights cleared.',
-                    featured: true
-                },
-                {
-                    id: 'cost',
-                    question: 'What does it cost to put my film on GATHR?',
-                    answer: 'Nothing upfront. You onboard your film for free and set your own screening fees. GATHR takes a platform fee from transactions, but you don\'t pay anything until you\'re earning. You retain full control over pricing and availability.',
-                    featured: true
-                },
-                {
-                    id: 'requirements',
-                    question: 'What do I need to get started?',
-                    answer: '<strong>Required:</strong> Film title, synopsis, poster image, trailer (Vimeo link), and either a Vimeo video link or HLS streaming link for the full film.<br><br><strong>For theatrical:</strong> Your film will need a DCP for theater screenings.<br><br><strong>For non-theatrical/VOD:</strong> A Vimeo or HLS link is sufficient.<br><br><a href="https://support.gathr.com/whats-required-to-upload-my-film-to-gathr" target="_blank">See full delivery specs →</a>',
-                    featured: true
-                },
-                {
-                    id: 'screenings',
-                    question: 'How do screenings work?',
-                    answer: '<strong>Theatrical On Demand®:</strong> Fans request screenings at local theaters. When enough tickets sell, the screening happens. Risk-free for everyone.<br><br><strong>Non-Theatrical:</strong> Schools, churches, libraries, and community groups book your film for private screenings. You set the fee.<br><br><strong>VOD:</strong> Audiences rent your film directly. You control pricing, rental windows, and availability.<br><br><a href="https://support.gathr.com/how-to-screen-my-film-on-gathr" target="_blank">Learn more about screening types →</a>',
-                    featured: true
-                },
-                {
-                    id: 'exclusive',
-                    question: 'Do I need to give GATHR exclusive rights?',
-                    answer: 'No. GATHR is non-exclusive. You can (and should) distribute your film through other channels simultaneously. Many filmmakers use GATHR alongside traditional distribution, streaming platforms, and direct sales.',
-                    featured: true
-                }
-            ],
-            host: [
-                {
-                    id: 'types',
-                    question: 'What types of screenings can I host?',
-                    answer: '<strong>Theatrical On Demand®:</strong> Partner with a local movie theater. The screening only happens if enough tickets sell—no risk.<br><br><strong>Non-Theatrical:</strong> Screen at schools, churches, community centers, libraries, or private venues. You pay a licensing fee to the filmmaker.<br><br><strong>Virtual:</strong> Host an online screening with live Q&A via Zoom integration.<br><br><a href="https://support.gathr.com/film-screening-host-toolkit" target="_blank">Full host toolkit →</a>',
-                    featured: true
-                },
-                {
-                    id: 'cost',
-                    question: 'How much does it cost?',
-                    answer: 'It depends on the film and screening type. Each filmmaker sets their own fees. Non-theatrical screenings typically range from $150-$800+ depending on the film, your organization type (educational, non-profit, faith, etc.), and whether you\'re charging admission. You\'ll see the exact fee when you request a screening on GATHR.',
-                    featured: true
-                },
-                {
-                    id: 'discount',
-                    question: 'I\'m a school/non-profit—do I get a discount?',
-                    answer: 'Many filmmakers offer reduced fees for educational institutions and non-profits. When you request a screening, you\'ll identify your organization type, and the system will show you the applicable rate. Educational orgs need a .edu email; non-profits need a verified EIN.',
-                    featured: true
-                },
-                {
-                    id: 'equipment',
-                    question: 'What equipment do I need?',
-                    answer: 'For non-theatrical screenings, you\'ll need: a laptop or device to access the film, HDMI connection to your projector/display (HDCP-compliant), speakers, and a stable internet connection. The film streams through our secure player—no downloads needed.<br><br><a href="https://support.gathr.com/how-to-ensure-your-screening-goes-smoothly-with-hdcp-compliant-equipment" target="_blank">Equipment checklist →</a>',
-                    featured: true
-                },
-                {
-                    id: 'specific-film',
-                    question: 'Can I request a specific film?',
-                    answer: 'If a film is on GATHR, you can request it directly through the platform. If you\'re looking for a specific film that\'s not on GATHR yet, let us know—we may be able to help connect you with the filmmaker. Use the form below to tell us what you\'re looking for.',
-                    featured: true
-                }
-            ],
-            help: [
-                {
-                    id: 'cant-access',
-                    question: 'I can\'t access my ticket or VOD',
-                    answer: '<strong>Step 1:</strong> Check your email (including spam/promotions) for an email from GATHR with your purchase confirmation. The access link is in that email.<br><br><strong>Step 2:</strong> Try logging into <a href="https://gathr.com" target="_blank">gathr.com</a> with the email you used to purchase. Your tickets and rentals should appear in your account.<br><br><strong>Step 3:</strong> If you still can\'t find it, use the form below and we\'ll resend your access link.',
-                    featured: true
-                },
-                {
-                    id: 'vod-not-playing',
-                    question: 'My VOD rental isn\'t playing',
-                    answer: '<strong>Check your rental window:</strong> VOD rentals typically have a viewing period (e.g., 48-72 hours from first play, or a set expiration date). Make sure your rental is still active.<br><br><strong>Try a different browser:</strong> Chrome or Firefox work best. Clear your cache or try incognito mode.<br><br><strong>Check your connection:</strong> VODs require stable internet. Try refreshing or switching networks.<br><br><strong>Smart TV issues?</strong> <a href="https://support.gathr.com/video-on-demand-vod-setup-viewing" target="_blank">See our TV casting guide →</a>',
-                    featured: true
-                },
-                {
-                    id: 'refund',
-                    question: 'I need a refund',
-                    answer: 'Refund policies vary by event and filmmaker. Generally:<br><br>• <strong>Cancelled events:</strong> Automatic full refund<br>• <strong>VOD rentals:</strong> Refunds available if you haven\'t started watching<br>• <strong>Ticket purchases:</strong> Contact us before the event for case-by-case review<br><br>Use the form below to request a refund, or email <a href="mailto:support@gathr.com">support@gathr.com</a>.',
-                    featured: true
-                },
-                {
-                    id: 'screening-help',
-                    question: 'I\'m hosting a screening and need help',
-                    answer: '<strong>Film won\'t play?</strong><br>• Make sure your HDMI cable and display are HDCP-compliant<br>• Try a different browser (Chrome recommended)<br>• Check your internet connection<br>• Disable any VPNs<br><br><strong>Need the screening link?</strong> Check your email for the screening access instructions sent before your event.<br><br><a href="https://support.gathr.com/how-to-play-the-film-at-your-non-theatrical-screening-event" target="_blank">Full screening day guide →</a>',
-                    featured: true
-                }
-            ]
-        };
+        // FAQ Data - Loaded from JSON files (managed via admin.html switchboard)
+        let anchoredFAQs = { filmmaker: [], host: [], help: [] };
+        let faqConfig = {};
 
         // Load weekly report data (new questions from email log)
         let weeklyReport = {
@@ -1433,12 +1351,28 @@
                 document.getElementById('last-updated').textContent = new Date().toLocaleDateString();
             });
 
-        // Render FAQs
+        // Load FAQ content and config from JSON, then render
+        async function loadFAQs() {
+            try {
+                const [contentRes, configRes] = await Promise.all([
+                    fetch('data/faq-content.json'),
+                    fetch('data/faq-config.json')
+                ]);
+                anchoredFAQs = await contentRes.json();
+                faqConfig = await configRes.json();
+            } catch (e) {
+                console.warn('Could not load FAQ JSON files, FAQs will be empty.');
+            }
+            renderFAQs();
+        }
+
+        // Render FAQs (filters by faq-config.json toggles)
         function renderFAQs() {
             ['filmmaker', 'host', 'help'].forEach(section => {
                 const container = document.getElementById(`${section}-faqs`);
-                const faqs = anchoredFAQs[section].filter(f => f.featured);
-                
+                const sectionConfig = faqConfig[section] || {};
+                const faqs = (anchoredFAQs[section] || []).filter(f => sectionConfig[f.id] !== false);
+
                 container.innerHTML = faqs.map(faq => `
                     <div class="faq-item" data-id="${faq.id}">
                         <button class="faq-question" onclick="toggleFaq(this)">
@@ -1497,7 +1431,7 @@
 
         // Initialize
         renderTutorials();
-        renderFAQs();
+        loadFAQs();
     </script>
 </body>
 </html>
