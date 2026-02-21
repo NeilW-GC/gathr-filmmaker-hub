@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tax-Exempt &amp; Educational Pricing – GATHR Filmmaker Hub</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #0a0a0a;
+            --bg-card: #141414;
+            --bg-card-hover: #1a1a1a;
+            --text-primary: #f5f5f4;
+            --text-secondary: #a8a8a8;
+            --text-muted: #6b6b6b;
+            --accent: #7C5CFF;
+            --accent-hover: #9475FF;
+            --accent-light: rgba(124, 92, 255, 0.1);
+            --accent-border: rgba(124, 92, 255, 0.2);
+            --border: #2a2a2a;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'DM Sans', sans-serif; background: var(--bg-dark); color: var(--text-primary); line-height: 1.8; min-height: 100vh; }
+        .container { max-width: 720px; margin: 0 auto; padding: 0 24px; }
+        header { padding: 24px 0; border-bottom: 1px solid var(--border); }
+        .header-inner { max-width: 720px; margin: 0 auto; padding: 0 24px; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-family: 'Fraunces', serif; font-size: 1.3rem; font-weight: 600; color: var(--text-primary); text-decoration: none; }
+        .logo span { color: var(--accent); }
+        .back-link { color: var(--text-secondary); text-decoration: none; font-size: 0.95rem; display: inline-flex; align-items: center; gap: 6px; transition: color 0.2s; }
+        .back-link:hover { color: var(--text-primary); }
+        article { padding: 60px 0 80px; }
+        .breadcrumb { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 32px; }
+        .breadcrumb a { color: var(--text-secondary); text-decoration: none; }
+        .breadcrumb a:hover { color: var(--accent); }
+        h1 { font-family: 'Fraunces', serif; font-size: clamp(2rem, 4vw, 2.8rem); font-weight: 600; line-height: 1.2; margin-bottom: 16px; letter-spacing: -0.02em; }
+        .subtitle { font-size: 1.15rem; color: var(--text-secondary); margin-bottom: 48px; }
+        h2 { font-family: 'Fraunces', serif; font-size: 1.5rem; font-weight: 600; margin-top: 48px; margin-bottom: 16px; }
+        p { font-size: 1.1rem; color: var(--text-secondary); margin-bottom: 20px; }
+        .step-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 16px; padding: 32px; margin-bottom: 24px; }
+        .step-card h3 { font-family: 'Fraunces', serif; font-size: 1.25rem; font-weight: 600; margin-bottom: 12px; color: var(--text-primary); }
+        .step-card p { font-size: 1.05rem; margin-bottom: 12px; }
+        .step-card p:last-child { margin-bottom: 0; }
+        .highlight-box { background: linear-gradient(135deg, var(--accent-light) 0%, rgba(124, 92, 255, 0.02) 100%); border: 1px solid var(--accent-border); border-radius: 12px; padding: 24px 28px; margin: 32px 0; }
+        .highlight-box h4 { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent); margin-bottom: 10px; }
+        .highlight-box p { color: var(--text-primary); font-size: 1.05rem; margin-bottom: 0; }
+        .help-box { background: var(--bg-card); border: 1px solid var(--border); border-radius: 16px; padding: 32px; text-align: center; margin-top: 48px; }
+        .help-box h3 { font-family: 'Fraunces', serif; font-size: 1.3rem; font-weight: 600; margin-bottom: 12px; }
+        .help-box p { color: var(--text-secondary); margin-bottom: 20px; }
+        .help-box a { color: var(--accent); font-weight: 500; text-decoration: none; font-size: 1.05rem; }
+        .help-box a:hover { text-decoration: underline; }
+        footer { border-top: 1px solid var(--border); padding: 32px 0; text-align: center; }
+        footer p { color: var(--text-muted); font-size: 0.85rem; }
+        footer a { color: var(--text-secondary); text-decoration: none; }
+        footer a:hover { color: var(--text-primary); }
+        a { color: var(--accent); }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-inner">
+            <a href="../index.html" class="logo">GATHR <span>Filmmaker Hub</span></a>
+            <a href="../index.html" class="back-link">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+                Back to Hub
+            </a>
+        </div>
+    </header>
+
+    <article>
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">Hub</a> → <a href="../index.html" onclick="localStorage.setItem('openSection','host')">Hosts</a> → Tax-Exempt Pricing
+            </div>
+
+            <h1>Tax-Exempt &amp; Educational Pricing</h1>
+            <p class="subtitle">Schools, non-profits, and faith-based organizations may qualify for reduced screening fees.</p>
+
+            <div class="highlight-box">
+                <h4>The short version</h4>
+                <p>Many filmmakers offer reduced fees for .edu and 501(c)(3) organizations. Select your org type when requesting a screening and the rate shows automatically. Not all films offer reduced pricing — it's up to each filmmaker.</p>
+            </div>
+
+            <h2>Who qualifies</h2>
+
+            <div class="step-card">
+                <h3>🎓 Educational institutions (.edu)</h3>
+                <p>Accredited schools, colleges, and universities with a .edu email address. This includes K-12 schools, community colleges, and university departments.</p>
+                <p><strong>What you need:</strong> Register on GATHR with your .edu email address. The educational rate (if the filmmaker offers one) appears automatically when you request a screening.</p>
+            </div>
+
+            <div class="step-card">
+                <h3>🏛️ Non-profits (501(c)(3))</h3>
+                <p>Registered 501(c)(3) organizations verified by EIN. This includes community organizations, arts councils, film societies, and advocacy groups.</p>
+                <p><strong>What you need:</strong> Select "Non-Profit" as your organization type when requesting a screening. Have your EIN (Employer Identification Number) ready — our team verifies non-profit status before applying the reduced rate.</p>
+            </div>
+
+            <div class="step-card">
+                <h3>⛪ Faith-based organizations</h3>
+                <p>Churches, synagogues, mosques, and other faith communities. Most qualify for the non-profit rate.</p>
+                <p><strong>What you need:</strong> Select "Faith-Based" when requesting a screening and provide your organization name and details.</p>
+            </div>
+
+            <h2>How it works in practice</h2>
+
+            <div class="step-card">
+                <h3>Step 1: Request a screening</h3>
+                <p>Go to the film's page on GATHR and click "Request a Screening." During the process, you'll be asked for your organization type.</p>
+            </div>
+
+            <div class="step-card">
+                <h3>Step 2: See your rate</h3>
+                <p>If the filmmaker offers a reduced rate for your org type, you'll see it displayed during booking. If no reduced rate is available, you'll see the standard fee.</p>
+            </div>
+
+            <div class="step-card">
+                <h3>Step 3: Verification (non-profits only)</h3>
+                <p>For 501(c)(3) organizations, our team may reach out to verify your EIN before confirming the reduced rate. This usually takes 1-2 business days.</p>
+            </div>
+
+            <h2>Good to know</h2>
+
+            <div class="step-card">
+                <p>• <strong>Not all films offer reduced pricing.</strong> It's each filmmaker's choice. If a reduced rate isn't available, you'll see the standard fee during booking.</p>
+                <p>• <strong>Educational rates are for educational use.</strong> Screenings must be connected to curriculum, campus life, or educational programming — not commercial events hosted at a school venue.</p>
+                <p>• <strong>Multiple screenings?</strong> If you're planning a series or multiple events, email us — we may be able to arrange a package rate.</p>
+            </div>
+
+            <div class="help-box">
+                <h3>Questions about pricing for your organization?</h3>
+                <p>Email us with the film title, your organization name, and org type.</p>
+                <a href="mailto:support@gathr.com">support@gathr.com</a>
+            </div>
+        </div>
+    </article>
+
+    <footer>
+        <div class="container">
+            <p>
+                <a href="https://gathr.com">GATHR</a> ·
+                <a href="../index.html">Filmmaker Hub</a> ·
+                <a href="mailto:support@gathr.com">support@gathr.com</a>
+            </p>
+        </div>
+    </footer>
+</body>
+</html>

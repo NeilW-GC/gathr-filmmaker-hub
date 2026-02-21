@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filmmaker Spotlights – GATHR Filmmaker Hub</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #0a0a0a;
+            --bg-card: #141414;
+            --text-primary: #f5f5f4;
+            --text-secondary: #a8a8a8;
+            --text-muted: #6b6b6b;
+            --accent: #7C5CFF;
+            --accent-hover: #9475FF;
+            --accent-light: rgba(124, 92, 255, 0.1);
+            --accent-border: rgba(124, 92, 255, 0.2);
+            --border: #2a2a2a;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'DM Sans', sans-serif; background: var(--bg-dark); color: var(--text-primary); line-height: 1.8; min-height: 100vh; }
+        .container { max-width: 720px; margin: 0 auto; padding: 0 24px; }
+        header { padding: 24px 0; border-bottom: 1px solid var(--border); }
+        .header-inner { max-width: 720px; margin: 0 auto; padding: 0 24px; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-family: 'Fraunces', serif; font-size: 1.3rem; font-weight: 600; color: var(--text-primary); text-decoration: none; }
+        .logo span { color: var(--accent); }
+        .back-link { color: var(--text-secondary); text-decoration: none; font-size: 0.9rem; display: flex; align-items: center; gap: 6px; transition: color 0.2s; }
+        .back-link:hover { color: var(--text-primary); }
+        .article-hero { padding: 60px 0 40px; }
+        .article-tag { display: inline-block; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; font-weight: 600; color: #fbbf24; background: rgba(251, 191, 36, 0.1); padding: 4px 12px; border-radius: 20px; margin-bottom: 16px; }
+        .article-hero h1 { font-family: 'Fraunces', serif; font-size: clamp(2rem, 4vw, 2.8rem); font-weight: 600; line-height: 1.2; margin-bottom: 16px; letter-spacing: -0.02em; }
+        .article-hero p { color: var(--text-secondary); font-size: 1.1rem; }
+        .article-body { padding-bottom: 80px; }
+        .article-body h2 { font-family: 'Fraunces', serif; font-size: 1.5rem; font-weight: 600; margin: 40px 0 16px; letter-spacing: -0.01em; }
+        .article-body h3 { font-size: 1.15rem; font-weight: 600; margin: 32px 0 12px; }
+        .article-body p { color: var(--text-secondary); font-size: 1rem; margin-bottom: 16px; }
+        .article-body ul, .article-body ol { color: var(--text-secondary); margin: 0 0 16px 24px; }
+        .article-body li { margin-bottom: 8px; }
+        .article-body a { color: var(--accent); text-decoration: none; }
+        .article-body a:hover { text-decoration: underline; }
+        .callout { background: var(--accent-light); border: 1px solid var(--accent-border); border-radius: 10px; padding: 20px 24px; margin: 24px 0; }
+        .callout p { color: var(--text-primary); margin-bottom: 0; }
+        .callout strong { color: var(--accent); }
+        .case-study { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 28px; margin: 24px 0; }
+        .case-study h3 { font-family: 'Fraunces', serif; font-size: 1.2rem; font-weight: 600; margin: 0 0 4px; }
+        .case-study .cs-subtitle { color: var(--text-muted); font-size: 0.85rem; margin-bottom: 16px; font-style: italic; }
+        .case-study p { color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 12px; }
+        .case-study .cs-stat { display: inline-block; background: var(--accent-light); border: 1px solid var(--accent-border); border-radius: 6px; padding: 4px 12px; font-size: 0.85rem; color: var(--accent); font-weight: 500; margin-right: 8px; margin-bottom: 8px; }
+        footer { border-top: 1px solid var(--border); padding: 40px 0; text-align: center; }
+        footer p { color: var(--text-muted); font-size: 0.85rem; }
+        footer a { color: var(--text-secondary); text-decoration: none; }
+        footer a:hover { color: var(--text-primary); }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-inner">
+            <a href="../index.html" class="logo">GATHR <span>Filmmaker Hub</span></a>
+            <a href="../index.html" class="back-link">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+                Back to Hub
+            </a>
+        </div>
+    </header>
+
+    <article>
+        <div class="container">
+            <div class="article-hero">
+                <span class="article-tag">Case Studies</span>
+                <h1>Filmmaker Spotlights</h1>
+                <p>Real stories from filmmakers who found their audience through GATHR.</p>
+            </div>
+
+            <div class="article-body">
+                <p>Every film has a unique path to its audience. Here are stories from filmmakers who used GATHR to connect with communities, build grassroots demand, and generate meaningful revenue from their work.</p>
+
+                <div class="case-study">
+                    <h3>Documentary Finds a Home in Faith Communities</h3>
+                    <p class="cs-subtitle">Feature Documentary · Non-Theatrical Focus</p>
+                    <p>A documentary exploring themes of forgiveness and reconciliation found its natural audience through churches and faith-based organizations. The filmmaker partnered directly with community leaders, providing a discussion guide alongside each screening.</p>
+                    <p>By leaning into the non-theatrical model and empowering hosts to create meaningful community events, the film exceeded expectations.</p>
+                    <span class="cs-stat">150+ screenings</span>
+                    <span class="cs-stat">Non-theatrical</span>
+                    <span class="cs-stat">Ongoing demand</span>
+                </div>
+
+                <div class="case-study">
+                    <h3>Environmental Film Builds Grassroots Movement</h3>
+                    <p class="cs-subtitle">Feature Documentary · Theatrical + Non-Theatrical</p>
+                    <p>An environmental documentary used GATHR's Theatrical On Demand model to bring their film to cities where audiences expressed interest. Starting with a handful of screenings, word spread through environmental nonprofits and university sustainability programs.</p>
+                    <p>The filmmaker supplemented theatrical events with non-theatrical screenings at schools and nonprofits, creating a multi-channel distribution strategy.</p>
+                    <span class="cs-stat">80+ cities</span>
+                    <span class="cs-stat">University partnerships</span>
+                    <span class="cs-stat">Theatrical + Non-Theatrical</span>
+                </div>
+
+                <div class="case-study">
+                    <h3>Indie Narrative Leverages Festival Buzz</h3>
+                    <p class="cs-subtitle">Narrative Feature · VOD + Theatrical</p>
+                    <p>Coming off a strong festival run, an independent narrative film used GATHR to convert festival buzz into real revenue. They launched VOD alongside targeted theatrical screenings in cities where they had the strongest festival audience engagement.</p>
+                    <p>The combination of VOD availability and curated in-person events created a sustainable release strategy without traditional distribution overhead.</p>
+                    <span class="cs-stat">VOD + Theatrical</span>
+                    <span class="cs-stat">Festival-to-GATHR pipeline</span>
+                    <span class="cs-stat">Self-distributed</span>
+                </div>
+
+                <div class="callout">
+                    <p><strong>Want to be featured?</strong> We're always looking to highlight filmmaker success stories. Reach out to <a href="mailto:support@gathr.com" style="color: var(--accent);">support@gathr.com</a> to share yours.</p>
+                </div>
+            </div>
+        </div>
+    </article>
+
+    <footer>
+        <div class="container">
+            <p><a href="https://gathr.com">GATHR</a> · <a href="../index.html">Filmmaker Hub</a> · <a href="mailto:support@gathr.com">support@gathr.com</a></p>
+        </div>
+    </footer>
+</body>
+</html>

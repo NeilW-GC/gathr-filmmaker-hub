@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How Payouts Work – GATHR Filmmaker Hub</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #0a0a0a;
+            --bg-card: #141414;
+            --bg-card-hover: #1a1a1a;
+            --text-primary: #f5f5f4;
+            --text-secondary: #a8a8a8;
+            --text-muted: #6b6b6b;
+            --accent: #7C5CFF;
+            --accent-hover: #9475FF;
+            --accent-light: rgba(124, 92, 255, 0.1);
+            --accent-border: rgba(124, 92, 255, 0.2);
+            --border: #2a2a2a;
+            --success: #4ade80;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-primary);
+            line-height: 1.8;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+        header {
+            padding: 24px 0;
+            border-bottom: 1px solid var(--border);
+        }
+        .header-inner {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 0 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-family: 'Fraunces', serif;
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            text-decoration: none;
+        }
+        .logo span { color: var(--accent); }
+        .back-link {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.95rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: color 0.2s;
+        }
+        .back-link:hover { color: var(--text-primary); }
+        article {
+            padding: 60px 0 80px;
+        }
+        .breadcrumb {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 32px;
+        }
+        .breadcrumb a {
+            color: var(--text-secondary);
+            text-decoration: none;
+        }
+        .breadcrumb a:hover { color: var(--accent); }
+        h1 {
+            font-family: 'Fraunces', serif;
+            font-size: clamp(2rem, 4vw, 2.8rem);
+            font-weight: 600;
+            line-height: 1.2;
+            margin-bottom: 16px;
+            letter-spacing: -0.02em;
+        }
+        .subtitle {
+            font-size: 1.15rem;
+            color: var(--text-secondary);
+            margin-bottom: 48px;
+        }
+        h2 {
+            font-family: 'Fraunces', serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-top: 48px;
+            margin-bottom: 16px;
+            letter-spacing: -0.01em;
+        }
+        p {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+        }
+        .step-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 32px;
+            margin-bottom: 24px;
+        }
+        .step-card h3 {
+            font-family: 'Fraunces', serif;
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: var(--text-primary);
+        }
+        .step-number {
+            display: inline-block;
+            width: 36px;
+            height: 36px;
+            background: var(--accent);
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 36px;
+            font-weight: 600;
+            font-size: 1rem;
+            margin-right: 12px;
+            flex-shrink: 0;
+        }
+        .step-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+        .step-card p {
+            font-size: 1.05rem;
+            margin-bottom: 12px;
+        }
+        .step-card p:last-child { margin-bottom: 0; }
+        .highlight-box {
+            background: linear-gradient(135deg, var(--accent-light) 0%, rgba(124, 92, 255, 0.02) 100%);
+            border: 1px solid var(--accent-border);
+            border-radius: 12px;
+            padding: 24px 28px;
+            margin: 32px 0;
+        }
+        .highlight-box h4 {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--accent);
+            margin-bottom: 10px;
+        }
+        .highlight-box p {
+            color: var(--text-primary);
+            font-size: 1.05rem;
+            margin-bottom: 0;
+        }
+        .help-box {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 32px;
+            text-align: center;
+            margin-top: 48px;
+        }
+        .help-box h3 {
+            font-family: 'Fraunces', serif;
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+        .help-box p {
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+        }
+        .help-box a {
+            color: var(--accent);
+            font-weight: 500;
+            text-decoration: none;
+            font-size: 1.05rem;
+        }
+        .help-box a:hover { text-decoration: underline; }
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 32px 0;
+            text-align: center;
+        }
+        footer p {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+        footer a {
+            color: var(--text-secondary);
+            text-decoration: none;
+        }
+        footer a:hover { color: var(--text-primary); }
+        a { color: var(--accent); }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-inner">
+            <a href="../index.html" class="logo">GATHR <span>Filmmaker Hub</span></a>
+            <a href="../index.html" class="back-link">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+                Back to Hub
+            </a>
+        </div>
+    </header>
+
+    <article>
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">Hub</a> → <a href="../index.html" onclick="localStorage.setItem('openSection','filmmaker')">Filmmakers</a> → Payouts
+            </div>
+
+            <h1>How Payouts Work</h1>
+            <p class="subtitle">You earn money when people book your film. Here's when and how you get paid.</p>
+
+            <div class="highlight-box">
+                <h4>The short version</h4>
+                <p>You get paid 30–45 days after a screening or VOD rental. Payouts go through Bill.com. You'll get an email with a statement each time.</p>
+            </div>
+
+            <h2>When you get paid</h2>
+
+            <div class="step-card">
+                <div class="step-header">
+                    <span class="step-number">1</span>
+                    <h3>A screening happens or a VOD rental window closes</h3>
+                </div>
+                <p>For theatrical and non-theatrical screenings, the clock starts after the event date. For VOD rentals, it starts after the viewer's rental window expires.</p>
+            </div>
+
+            <div class="step-card">
+                <div class="step-header">
+                    <span class="step-number">2</span>
+                    <h3>GATHR processes your payout (30–45 days)</h3>
+                </div>
+                <p>We reconcile ticket sales, subtract the platform fee, and queue your payout. This typically takes 30–45 days from the event date.</p>
+            </div>
+
+            <div class="step-card">
+                <div class="step-header">
+                    <span class="step-number">3</span>
+                    <h3>You receive payment via Bill.com</h3>
+                </div>
+                <p>You'll get an email from Bill.com with your payout. If it's your first time, you'll need to create a Bill.com account first (see below).</p>
+            </div>
+
+            <h2>Setting up your payment profile</h2>
+
+            <div class="step-card">
+                <p><strong>First-time payout?</strong> You'll receive an email invite from Bill.com to set up your payment profile. You choose how you get paid:</p>
+                <p>• <strong>Bank transfer</strong> — direct deposit to your US bank account</p>
+                <p>• <strong>Check</strong> — mailed to your address on file</p>
+                <p>• <strong>International?</strong> We can arrange PayPal or Wise. Email <a href="mailto:support@gathr.com">support@gathr.com</a> to set this up.</p>
+            </div>
+
+            <h2>Understanding your payout statement</h2>
+
+            <div class="step-card">
+                <p>Every payout comes with a statement showing:</p>
+                <p>• The screening or VOD event name</p>
+                <p>• Total ticket revenue collected</p>
+                <p>• GATHR platform fee (deducted)</p>
+                <p>• Your net payout amount</p>
+                <p>If the host was a <strong>501(c)(3) or .edu institution</strong>, the licensing fee structure may differ — this is reflected automatically in your statement.</p>
+            </div>
+
+            <h2>Common questions</h2>
+
+            <div class="step-card">
+                <h3>I haven't received my payout yet</h3>
+                <p>Check that it's been at least 45 days since the event. If it has, email <a href="mailto:support@gathr.com">support@gathr.com</a> with your film name and the event date. We'll look into it.</p>
+            </div>
+
+            <div class="step-card">
+                <h3>I need a formal invoice</h3>
+                <p>Email <a href="mailto:support@gathr.com">support@gathr.com</a> with your film name, the event, and the amount in question. We'll send you a formatted invoice.</p>
+            </div>
+
+            <div class="step-card">
+                <h3>I think the amount is wrong</h3>
+                <p>Check your payout statement first — it breaks down the math. If something still looks off, email <a href="mailto:support@gathr.com">support@gathr.com</a> with the specifics and we'll reconcile it.</p>
+            </div>
+
+            <div class="help-box">
+                <h3>Still have questions?</h3>
+                <p>Email us with your film name, the event, and what you need help with.</p>
+                <a href="mailto:support@gathr.com">support@gathr.com</a>
+            </div>
+        </div>
+    </article>
+
+    <footer>
+        <div class="container">
+            <p>
+                <a href="https://gathr.com">GATHR</a> ·
+                <a href="../index.html">Filmmaker Hub</a> ·
+                <a href="mailto:support@gathr.com">support@gathr.com</a>
+            </p>
+        </div>
+    </footer>
+</body>
+</html>

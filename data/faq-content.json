@@ -3,106 +3,106 @@
     {
       "id": "fit",
       "question": "Is my film a good fit for GATHR?",
-      "answer": "GATHR works best for documentaries, independent features, faith-based films, and specialty content with built-in audiences. If your film has a community that wants to see it together—whether that's a cause, a fandom, a faith group, or a local connection—GATHR can help you reach them. We're not a fit for films still in production or those without distribution rights cleared."
+      "answer": "GATHR works best for documentaries, indie features, faith-based films, and specialty content with built-in audiences. If your film has a community that wants to see it together, we can help you reach them."
     },
     {
       "id": "cost",
       "question": "What does it cost to put my film on GATHR?",
-      "answer": "Nothing upfront. You onboard your film for free and set your own screening fees. GATHR takes a platform fee from transactions, but you don't pay anything until you're earning. You retain full control over pricing and availability."
+      "answer": "Nothing upfront. You onboard your film for free and set your own screening fees. GATHR takes a platform fee from transactions, but you don't pay anything until you're earning."
     },
     {
       "id": "requirements",
       "question": "What do I need to get started?",
-      "answer": "<strong>Required:</strong> Film title, synopsis, poster image, trailer (Vimeo link), and either a Vimeo video link or HLS streaming link for the full film.<br><br><strong>For theatrical:</strong> Your film will need a DCP for theater screenings.<br><br><strong>For non-theatrical/VOD:</strong> A Vimeo or HLS link is sufficient.<br><br><a href=\"https://support.gathr.com/whats-required-to-upload-my-film-to-gathr\" target=\"_blank\">See full delivery specs &rarr;</a>"
+      "answer": "Film title, synopsis, poster, trailer link, and a Vimeo or HLS link for the full film. Theatrical screenings also need a DCP. <a href=\"articles/delivery-specs.html\">See the full delivery checklist &rarr;</a>"
     },
     {
       "id": "delivery-specs",
       "question": "What are the delivery specs for uploading my film?",
-      "answer": "<strong>Video file:</strong> Upload to Vimeo (Pro or Business account) and share the link with GATHR, or provide an HLS streaming URL. Minimum 1080p resolution, H.264 codec recommended.<br><br><strong>DCP (theatrical only):</strong> Required for theater screenings. 2K or 4K flat/scope, 24fps, 5.1 surround or stereo. Ship the hard drive or provide a secure download link.<br><br><strong>Subtitles:</strong> SRT file required for all films. Burned-in captions are not accepted—we need a separate SRT so viewers can toggle them.<br><br><strong>Art assets:</strong> High-res poster (minimum 2000px tall, JPG or PNG), 3-5 production stills, and a landscape banner image (1920x1080).<br><br><strong>Metadata:</strong> Synopsis (short + long), runtime, year, director, cast, genre tags, and any trigger/content warnings.<br><br><strong>Timeline:</strong> Allow 3-5 business days after delivering all assets for your film page to go live. Incomplete deliveries are the most common cause of delays."
+      "answer": "You need a 1080p+ Vimeo link (or HLS URL), an SRT subtitle file, a high-res poster, stills, and metadata. Allow 3-5 business days after delivering everything. <a href=\"articles/delivery-specs.html\">Read the full delivery guide &rarr;</a>"
     },
     {
       "id": "screenings",
       "question": "How do screenings work?",
-      "answer": "<strong>Theatrical On Demand&reg;:</strong> Fans request screenings at local theaters. When enough tickets sell, the screening happens. Risk-free for everyone.<br><br><strong>Non-Theatrical:</strong> Schools, churches, libraries, and community groups book your film for private screenings. You set the fee.<br><br><strong>VOD:</strong> Audiences rent your film directly. You control pricing, rental windows, and availability.<br><br><a href=\"https://support.gathr.com/how-to-screen-my-film-on-gathr\" target=\"_blank\">Learn more about screening types &rarr;</a>"
+      "answer": "Three types: Theatrical On Demand (fans request screenings at local theaters), Non-Theatrical (schools, churches, etc. book your film), and VOD (audiences rent directly). You control pricing on all of them."
     },
     {
       "id": "exclusive",
       "question": "Do I need to give GATHR exclusive rights?",
-      "answer": "No. GATHR is non-exclusive. You can (and should) distribute your film through other channels simultaneously. Many filmmakers use GATHR alongside traditional distribution, streaming platforms, and direct sales."
+      "answer": "No. GATHR is non-exclusive. You can distribute your film through other channels simultaneously."
     },
     {
       "id": "payouts",
       "question": "How do payouts work?",
-      "answer": "<strong>When you get paid:</strong> Payouts are processed after a screening is completed or a VOD rental window closes. Expect payment within 30-45 days of the event.<br><br><strong>Revenue split:</strong> The exact split depends on your agreement. GATHR takes a platform fee; the remainder goes to you. You can view the breakdown for each event in your dashboard.<br><br><strong>Payout method:</strong> We process payouts via Bill.com. You'll receive an invite to set up your payment profile (bank transfer or check). International filmmakers can use PayPal or Wise—contact us to arrange this.<br><br><strong>Invoices and statements:</strong> Payout statements are sent by email after each disbursement. If you need a formal invoice or have questions about a specific amount, email <a href=\"mailto:support@gathr.com\">support@gathr.com</a> with your film name and the screening/event in question.<br><br><strong>Tax-exempt screenings:</strong> If the host is a 501(c)(3) or .edu institution, the licensing fee structure may differ. This is reflected in your payout statement automatically."
+      "answer": "You get paid 30-45 days after a screening or VOD rental closes, via Bill.com. <a href=\"articles/payouts.html\">Read the full payout guide &rarr;</a>"
     }
   ],
   "host": [
     {
       "id": "types",
       "question": "What types of screenings can I host?",
-      "answer": "<strong>Theatrical On Demand&reg;:</strong> Partner with a local movie theater. The screening only happens if enough tickets sell—no risk.<br><br><strong>Non-Theatrical:</strong> Screen at schools, churches, community centers, libraries, or private venues. You pay a licensing fee to the filmmaker.<br><br><strong>Virtual:</strong> Host an online screening with live Q&amp;A via Zoom integration.<br><br><a href=\"https://support.gathr.com/film-screening-host-toolkit\" target=\"_blank\">Full host toolkit &rarr;</a>"
+      "answer": "Theatrical (at a movie theater, risk-free), Non-Theatrical (schools, churches, private venues), or Virtual (online with Zoom Q&A)."
     },
     {
       "id": "cost",
       "question": "How much does it cost?",
-      "answer": "It depends on the film and screening type. Each filmmaker sets their own fees. Non-theatrical screenings typically range from $150-$800+ depending on the film, your organization type (educational, non-profit, faith, etc.), and whether you're charging admission. You'll see the exact fee when you request a screening on GATHR."
+      "answer": "Each filmmaker sets their own fees. Non-theatrical screenings typically range from $150-$800+ depending on the film and your organization type. You'll see the exact fee when you request a screening."
     },
     {
       "id": "discount",
-      "question": "I'm a school/non-profit—do I get a discount?",
-      "answer": "Many filmmakers offer reduced fees for educational institutions and non-profits. When you request a screening, you'll identify your organization type, and the system will show you the applicable rate. Educational orgs need a .edu email; non-profits need a verified EIN."
+      "question": "I'm a school/non-profit — do I get a discount?",
+      "answer": "Many filmmakers offer reduced fees for .edu and 501(c)(3) organizations. Select your org type when requesting a screening and the rate shows automatically. <a href=\"articles/tax-exempt.html\">Learn more about qualifying &rarr;</a>"
     },
     {
       "id": "equipment",
       "question": "What equipment do I need?",
-      "answer": "For non-theatrical screenings, you'll need: a laptop or device to access the film, HDMI connection to your projector/display (HDCP-compliant), speakers, and a stable internet connection. The film streams through our secure player—no downloads needed.<br><br><a href=\"https://support.gathr.com/how-to-ensure-your-screening-goes-smoothly-with-hdcp-compliant-equipment\" target=\"_blank\">Equipment checklist &rarr;</a>"
+      "answer": "A laptop, HDMI cable (HDCP-compliant), speakers, and stable internet. The film streams through our secure player — no downloads needed."
     },
     {
       "id": "specific-film",
       "question": "Can I request a specific film?",
-      "answer": "If a film is on GATHR, you can request it directly through the platform. If you're looking for a specific film that's not on GATHR yet, let us know—we may be able to help connect you with the filmmaker. Use the form below to tell us what you're looking for."
+      "answer": "If a film is on GATHR, you can request it directly. If it's not on GATHR yet, let us know — we may be able to connect you with the filmmaker."
     },
     {
       "id": "change-screening",
       "question": "How do I change, reschedule, or cancel my screening?",
-      "answer": "<strong>Date or time change:</strong> Contact us as early as possible. We can reschedule most screenings as long as the new date works for the venue and the film's availability window. Already-sold tickets will be transferred automatically—ticket holders are notified by email.<br><br><strong>Venue change:</strong> Let us know the new venue name, address, and capacity. We'll update the event page. If you're switching from theatrical to non-theatrical (or vice versa), the licensing fee may change.<br><br><strong>Cancel a screening:</strong> If the event hasn't happened yet, we can cancel it. All ticket holders receive automatic full refunds. The host is not charged a licensing fee for cancelled events.<br><br><strong>Pricing or ticket-type change:</strong> Want to switch from ticketed to free admission, change the ticket price, or add a custom offer code? We can update this for you—just tell us what you need.<br><br><strong>How to request any of these changes:</strong> Email <a href=\"mailto:support@gathr.com\">support@gathr.com</a> with your event name, the change you need, and your preferred new date/time (if applicable). Changes are typically processed within 2 business days."
+      "answer": "Email support@gathr.com with your event name and the change you need. Most changes are processed within 2 business days. <a href=\"articles/change-screening.html\">See all the details &rarr;</a>"
     },
     {
       "id": "tax-exempt",
-      "question": "I'm a 501(c)(3) or .edu—how does tax-exempt pricing work?",
-      "answer": "<strong>Educational institutions (.edu):</strong> Many filmmakers offer reduced non-theatrical licensing fees for accredited schools, colleges, and universities. You'll need to register with a .edu email address when requesting a screening. The reduced rate (if the filmmaker offers one) appears automatically.<br><br><strong>Non-profits (501(c)(3)):</strong> Verified non-profits may also qualify for reduced fees. When requesting a screening, select \"Non-Profit\" as your organization type and have your EIN ready. Our team verifies non-profit status before applying the rate.<br><br><strong>Faith-based organizations:</strong> Churches and faith groups are often eligible for the non-profit rate. Select \"Faith-Based\" when requesting and provide your organization details.<br><br><strong>Important:</strong> Not all filmmakers offer reduced pricing—it's their choice. If a reduced rate isn't available, you'll see the standard fee during the booking process. Questions about specific pricing? Email <a href=\"mailto:support@gathr.com\">support@gathr.com</a> with the film title and your organization details."
+      "question": "I'm a 501(c)(3) or .edu — how does tax-exempt pricing work?",
+      "answer": "Select your organization type when requesting a screening. If the filmmaker offers a reduced rate, it appears automatically. <a href=\"articles/tax-exempt.html\">Read the full guide &rarr;</a>"
     }
   ],
   "help": [
     {
       "id": "cant-access",
       "question": "I can't access my ticket or VOD",
-      "answer": "<strong>Step 1:</strong> Check your email (including spam/promotions) for an email from GATHR with your purchase confirmation. The access link is in that email.<br><br><strong>Step 2:</strong> Try logging into <a href=\"https://gathr.com\" target=\"_blank\">gathr.com</a> with the email you used to purchase. Your tickets and rentals should appear in your account.<br><br><strong>Step 3:</strong> If you still can't find it, use the form below and we'll resend your access link."
+      "answer": "Check your email (including spam) for a GATHR confirmation with your access link. Or log into <a href=\"https://gathr.com\" target=\"_blank\">gathr.com</a> with the email you used to purchase. Still can't find it? Use the form below."
     },
     {
       "id": "vod-not-playing",
       "question": "My VOD rental isn't playing",
-      "answer": "<strong>Check your rental window:</strong> VOD rentals typically have a viewing period (e.g., 48-72 hours from first play, or a set expiration date). Make sure your rental is still active.<br><br><strong>Try a different browser:</strong> Chrome or Firefox work best. Clear your cache or try incognito mode.<br><br><strong>Check your connection:</strong> VODs require stable internet. Try refreshing or switching networks.<br><br><strong>Smart TV issues?</strong> <a href=\"https://support.gathr.com/video-on-demand-vod-setup-viewing\" target=\"_blank\">See our TV casting guide &rarr;</a>"
+      "answer": "Make sure your rental window is still active, try Chrome or Firefox in incognito mode, and check your internet connection. If you're trying to watch on a TV, <a href=\"articles/casting-to-tv.html\">see our TV setup guide</a>."
     },
     {
       "id": "viewing-window",
       "question": "How long do I have to watch my VOD rental?",
-      "answer": "<strong>Standard rental window:</strong> Most GATHR VOD rentals give you 72 hours from the moment you first press play. Some films have different windows (48 hours or 7 days)—check your confirmation email for the exact window.<br><br><strong>Before you press play:</strong> Your rental doesn't start until you actually begin watching. So if you bought a rental on Monday but don't press play until Friday, your 72-hour window starts Friday.<br><br><strong>Expiration date rentals:</strong> Some screenings use a fixed expiration date instead of a play-based window (e.g., \"available until March 15\"). This means the rental expires on that date regardless of when you start watching.<br><br><strong>Can I pause and resume?</strong> Yes. Pausing does not stop the clock, but you can come back anytime within your window. Use the same email/browser to pick up where you left off.<br><br><strong>Window expired?</strong> If your rental expired before you could finish, email <a href=\"mailto:support@gathr.com\">support@gathr.com</a> with your name, the film title, and your purchase email. We'll review on a case-by-case basis."
+      "answer": "Most rentals give you 72 hours from the moment you press play. The clock doesn't start until you actually begin watching. <a href=\"articles/viewing-window.html\">Read the full guide &rarr;</a>"
     },
     {
       "id": "casting-to-tv",
-      "question": "How do I watch on my TV (Chromecast, AirPlay, HDMI)?",
-      "answer": "<strong>HDMI cable (most reliable):</strong> Connect your laptop directly to your TV with an HDMI cable. Make sure the cable and your TV support HDCP (most modern cables and TVs do). Open your GATHR rental in Chrome on the laptop, go full-screen, and you're set.<br><br><strong>Chromecast:</strong> Open your rental in Chrome on your laptop or Android device. Click the Cast icon in the browser toolbar and select your Chromecast. Note: some content may be restricted from casting due to DRM—if casting doesn't work, use the HDMI method instead.<br><br><strong>AirPlay (Apple TV):</strong> On your Mac or iPhone, open the rental in Safari. Use Screen Mirroring (Control Center &rarr; Screen Mirroring) to send it to your Apple TV. Full-screen the video for the best experience.<br><br><strong>Smart TV browser:</strong> Some smart TVs have a built-in web browser. Navigate to your rental link and log in. This works in a pinch, but playback quality varies by TV model—laptop + HDMI is more reliable.<br><br><strong>What doesn't work:</strong> Screen sharing via Zoom, Teams, or other conferencing tools is blocked by DRM. Casting from mobile apps to TV may also be restricted depending on the film.<br><br><strong>Still having trouble?</strong> Use the help form below and include your TV model and what you've tried. We'll walk you through it."
+      "question": "How do I watch on my TV?",
+      "answer": "The easiest way: laptop + HDMI cable + Chrome. Open your rental, go full-screen, done. <a href=\"articles/casting-to-tv.html\">See all methods (Chromecast, AirPlay, etc.) &rarr;</a>"
     },
     {
       "id": "refund",
       "question": "I need a refund",
-      "answer": "Refund policies vary by event and filmmaker. Generally:<br><br>&bull; <strong>Cancelled events:</strong> Automatic full refund<br>&bull; <strong>VOD rentals:</strong> Refunds available if you haven't started watching<br>&bull; <strong>Ticket purchases:</strong> Contact us before the event for case-by-case review<br><br>Use the form below to request a refund, or email <a href=\"mailto:support@gathr.com\">support@gathr.com</a>."
+      "answer": "Cancelled events get automatic full refunds. VOD rentals are refundable if you haven't started watching. For ticket purchases, contact us before the event. Email <a href=\"mailto:support@gathr.com\">support@gathr.com</a>."
     },
     {
       "id": "screening-help",
       "question": "I'm hosting a screening and need help",
-      "answer": "<strong>Film won't play?</strong><br>&bull; Make sure your HDMI cable and display are HDCP-compliant<br>&bull; Try a different browser (Chrome recommended)<br>&bull; Check your internet connection<br>&bull; Disable any VPNs<br><br><strong>Need the screening link?</strong> Check your email for the screening access instructions sent before your event.<br><br><a href=\"https://support.gathr.com/how-to-play-the-film-at-your-non-theatrical-screening-event\" target=\"_blank\">Full screening day guide &rarr;</a>"
+      "answer": "Check that your HDMI cable is HDCP-compliant, use Chrome, and make sure you're connected to the internet. Check your email for screening access instructions sent before your event."
     }
   ]
 }

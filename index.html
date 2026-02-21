@@ -19,6 +19,8 @@
             --accent-hover: #9475FF;
             --accent-light: rgba(124, 92, 255, 0.1);
             --accent-border: rgba(124, 92, 255, 0.2);
+            --accent-orange: #FF8C42;
+            --accent-teal: #2DD4BF;
             --border: #2a2a2a;
             --success: #4ade80;
         }
@@ -77,6 +79,15 @@
 
         .logo span {
             color: var(--accent);
+            transition: color 0.3s ease;
+        }
+
+        .logo span.host-mode {
+            color: var(--accent-orange);
+        }
+
+        .logo span.help-mode {
+            color: var(--accent-teal);
         }
 
         .header-links a {
@@ -730,6 +741,194 @@
         .weekly-report-badge strong {
             color: var(--text-secondary);
         }
+
+        /* Article Resource Cards */
+        .articles-section {
+            margin-bottom: 48px;
+        }
+
+        .articles-section h3 {
+            font-family: 'Fraunces', serif;
+            font-size: 1.35rem;
+            font-weight: 600;
+            margin-bottom: 24px;
+            color: var(--text-primary);
+        }
+
+        .articles-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 16px;
+        }
+
+        @media (max-width: 900px) {
+            .articles-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .articles-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        .article-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            overflow: hidden;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .article-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+        }
+
+        .article-card-thumb {
+            width: 100%;
+            height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .article-card-thumb.payments { background: linear-gradient(135deg, #1a3a2a 0%, #0d1f17 100%); }
+        .article-card-thumb.outreach { background: linear-gradient(135deg, #2a1a3a 0%, #170d1f 100%); }
+        .article-card-thumb.best-practices { background: linear-gradient(135deg, #1a2a3a 0%, #0d171f 100%); }
+        .article-card-thumb.case-studies { background: linear-gradient(135deg, #3a2a1a 0%, #1f170d 100%); }
+        .article-card-thumb.misc { background: linear-gradient(135deg, #2a2a3a 0%, #17171f 100%); }
+
+        .article-card-thumb .thumb-icon {
+            width: 56px;
+            height: 56px;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.6rem;
+        }
+
+        .article-card-thumb.payments .thumb-icon { background: rgba(74, 222, 128, 0.15); }
+        .article-card-thumb.outreach .thumb-icon { background: rgba(192, 132, 252, 0.15); }
+        .article-card-thumb.best-practices .thumb-icon { background: rgba(96, 165, 250, 0.15); }
+        .article-card-thumb.case-studies .thumb-icon { background: rgba(251, 191, 36, 0.15); }
+        .article-card-thumb.misc .thumb-icon { background: rgba(148, 163, 184, 0.15); }
+
+        .article-card-body {
+            padding: 16px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .article-card-body .article-tag {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .article-card-thumb.payments + .article-card-body .article-tag { color: #4ade80; }
+        .article-card-thumb.outreach + .article-card-body .article-tag { color: #c084fc; }
+        .article-card-thumb.best-practices + .article-card-body .article-tag { color: #60a5fa; }
+        .article-card-thumb.case-studies + .article-card-body .article-tag { color: #fbbf24; }
+        .article-card-thumb.misc + .article-card-body .article-tag { color: #94a3b8; }
+
+        .article-card-body h4 {
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: var(--text-primary);
+            margin-bottom: 6px;
+            line-height: 1.3;
+        }
+
+        .article-card-body p {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            line-height: 1.4;
+            flex: 1;
+        }
+
+        .article-card-body .read-link {
+            margin-top: 12px;
+            font-size: 0.8rem;
+            color: var(--accent);
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .article-card:hover .read-link svg {
+            transform: translateX(3px);
+        }
+
+        .article-card-body .read-link svg {
+            transition: transform 0.2s;
+        }
+
+        /* Concierge Button */
+        .concierge-divider {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin: 32px 0 0;
+        }
+
+        .concierge-divider::before,
+        .concierge-divider::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: var(--border);
+        }
+
+        .concierge-divider span {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            white-space: nowrap;
+        }
+
+        .concierge-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            width: 100%;
+            margin-top: 20px;
+            padding: 18px 32px;
+            background: linear-gradient(135deg, rgba(124, 92, 255, 0.08) 0%, rgba(124, 92, 255, 0.02) 100%);
+            border: 1px solid var(--accent-border);
+            border-radius: 10px;
+            color: var(--accent);
+            font-family: 'DM Sans', sans-serif;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .concierge-btn:hover {
+            background: linear-gradient(135deg, rgba(124, 92, 255, 0.15) 0%, rgba(124, 92, 255, 0.05) 100%);
+            border-color: var(--accent);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 16px rgba(124, 92, 255, 0.2);
+        }
+
+        .concierge-btn svg {
+            flex-shrink: 0;
+        }
     </style>
 </head>
 <body>
@@ -740,7 +939,7 @@
 
     <header>
         <div class="container header-content">
-            <a href="#" class="logo" onclick="showMain(); return false;">GATHR <span>Filmmaker Hub</span></a>
+            <a href="#" class="logo" id="site-logo" onclick="showMain(); return false;">GATHR <span id="logo-label">Filmmaker Hub</span></a>
             <div class="header-links">
                 <a href="https://support.gathr.com">Full Help Center</a>
                 <a href="https://gathr.com">Go to GATHR</a>
@@ -831,8 +1030,73 @@
                 </div>
             </div>
 
+            <div class="tutorial-section">
+                <h3>Common Questions</h3>
+            </div>
             <div class="faq-list" id="filmmaker-faqs">
                 <!-- FAQs loaded from JSON -->
+            </div>
+
+            <!-- Filmmaker Articles -->
+            <div class="articles-section">
+                <h3>Resources & Guides</h3>
+                <div class="articles-grid">
+                    <a href="articles/filmmaker-payments.html" class="article-card">
+                        <div class="article-card-thumb payments">
+                            <div class="thumb-icon">💰</div>
+                        </div>
+                        <div class="article-card-body">
+                            <span class="article-tag">Payments</span>
+                            <h4>Understanding Payouts & Revenue</h4>
+                            <p>How and when you get paid for screenings and VOD sales</p>
+                            <span class="read-link">Read article <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+                        </div>
+                    </a>
+                    <a href="articles/filmmaker-outreach.html" class="article-card">
+                        <div class="article-card-thumb outreach">
+                            <div class="thumb-icon">📣</div>
+                        </div>
+                        <div class="article-card-body">
+                            <span class="article-tag">Outreach</span>
+                            <h4>Reaching Your Audience</h4>
+                            <p>Strategies to promote your film and drive screening requests</p>
+                            <span class="read-link">Read article <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+                        </div>
+                    </a>
+                    <a href="articles/filmmaker-best-practices.html" class="article-card">
+                        <div class="article-card-thumb best-practices">
+                            <div class="thumb-icon">✨</div>
+                        </div>
+                        <div class="article-card-body">
+                            <span class="article-tag">Best Practices</span>
+                            <h4>Setting Up for Success</h4>
+                            <p>Tips from top-performing filmmakers on GATHR</p>
+                            <span class="read-link">Read article <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+                        </div>
+                    </a>
+                    <a href="articles/filmmaker-case-studies.html" class="article-card">
+                        <div class="article-card-thumb case-studies">
+                            <div class="thumb-icon">🎯</div>
+                        </div>
+                        <div class="article-card-body">
+                            <span class="article-tag">Case Studies</span>
+                            <h4>Filmmaker Spotlights</h4>
+                            <p>Real stories from filmmakers who found their audience</p>
+                            <span class="read-link">Read article <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+                        </div>
+                    </a>
+                    <a href="articles/filmmaker-misc.html" class="article-card">
+                        <div class="article-card-thumb misc">
+                            <div class="thumb-icon">📋</div>
+                        </div>
+                        <div class="article-card-body">
+                            <span class="article-tag">Misc.</span>
+                            <h4>Additional Resources</h4>
+                            <p>Delivery specs, tax info, and other useful references</p>
+                            <span class="read-link">Read article <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+                        </div>
+                    </a>
+                </div>
             </div>
 
             <div class="intake-form">
@@ -905,6 +1169,19 @@
 
                     <button type="submit" class="submit-btn">Submit</button>
                 </form>
+
+                <div class="concierge-divider">
+                    <span>or</span>
+                </div>
+
+                <a href="articles/concierge.html" class="concierge-btn">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="12" cy="7" r="4"></circle>
+                    </svg>
+                    Explore Concierge
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
             </div>
         </div>
     </section>
@@ -1150,10 +1427,10 @@
             filmmaker: [
                 {
                     id: 'onboard-film',
-                    title: 'Onboard Your Film',
+                    title: 'Setting Up Your First Film On GATHR',
                     description: 'Step-by-step guide to adding your film to GATHR',
-                    url: '', // Add Loom URL
-                    thumbnail: '', // Add thumbnail URL or leave blank
+                    url: 'https://www.loom.com/share/3b62b419b1ff41cfa63381b0ef372b89',
+                    thumbnail: 'https://cdn.loom.com/sessions/thumbnails/3b62b419b1ff41cfa63381b0ef372b89-with-play.gif',
                     duration: '3:00'
                 },
                 {
@@ -1330,9 +1607,40 @@
             });
         }
 
-        // FAQ Data - Loaded from JSON files (managed via admin.html switchboard)
-        let anchoredFAQs = { filmmaker: [], host: [], help: [] };
-        let faqConfig = {};
+        // FAQ Data - Inline fallback + loaded from JSON files
+        let anchoredFAQs = {
+            filmmaker: [
+                { id: 'fit', question: 'Is my film a good fit for GATHR?', answer: 'GATHR works best for documentaries, indie features, faith-based films, and specialty content with built-in audiences. If your film has a community that wants to see it together, we can help you reach them.' },
+                { id: 'cost', question: 'What does it cost to put my film on GATHR?', answer: 'Nothing upfront. You onboard your film for free and set your own screening fees. GATHR takes a platform fee from transactions, but you don\'t pay anything until you\'re earning.' },
+                { id: 'requirements', question: 'What do I need to get started?', answer: 'Film title, synopsis, poster, trailer link, and a Vimeo or HLS link for the full film. Theatrical screenings also need a DCP. <a href="articles/delivery-specs.html">See the full delivery checklist &rarr;</a>' },
+                { id: 'delivery-specs', question: 'What are the delivery specs for uploading my film?', answer: 'You need a 1080p+ Vimeo link (or HLS URL), an SRT subtitle file, a high-res poster, stills, and metadata. Allow 3-5 business days after delivering everything. <a href="articles/delivery-specs.html">Read the full delivery guide &rarr;</a>' },
+                { id: 'screenings', question: 'How do screenings work?', answer: 'Three types: Theatrical On Demand (fans request screenings at local theaters), Non-Theatrical (schools, churches, etc. book your film), and VOD (audiences rent directly). You control pricing on all of them.' },
+                { id: 'exclusive', question: 'Do I need to give GATHR exclusive rights?', answer: 'No. GATHR is non-exclusive. You can distribute your film through other channels simultaneously.' },
+                { id: 'payouts', question: 'How do payouts work?', answer: 'You get paid 30-45 days after a screening or VOD rental closes, via Bill.com. <a href="articles/payouts.html">Read the full payout guide &rarr;</a>' }
+            ],
+            host: [
+                { id: 'types', question: 'What types of screenings can I host?', answer: 'Theatrical (at a movie theater, risk-free), Non-Theatrical (schools, churches, private venues), or Virtual (online with Zoom Q&A).' },
+                { id: 'cost', question: 'How much does it cost?', answer: 'Each filmmaker sets their own fees. Non-theatrical screenings typically range from $150-$800+ depending on the film and your organization type. You\'ll see the exact fee when you request a screening.' },
+                { id: 'discount', question: 'I\'m a school/non-profit — do I get a discount?', answer: 'Many filmmakers offer reduced fees for .edu and 501(c)(3) organizations. Select your org type when requesting a screening and the rate shows automatically. <a href="articles/tax-exempt.html">Learn more about qualifying &rarr;</a>' },
+                { id: 'equipment', question: 'What equipment do I need?', answer: 'A laptop, HDMI cable (HDCP-compliant), speakers, and stable internet. The film streams through our secure player — no downloads needed.' },
+                { id: 'specific-film', question: 'Can I request a specific film?', answer: 'If a film is on GATHR, you can request it directly. If it\'s not on GATHR yet, let us know — we may be able to connect you with the filmmaker.' },
+                { id: 'change-screening', question: 'How do I change, reschedule, or cancel my screening?', answer: 'Email support@gathr.com with your event name and the change you need. Most changes are processed within 2 business days. <a href="articles/change-screening.html">See all the details &rarr;</a>' },
+                { id: 'tax-exempt', question: 'I\'m a 501(c)(3) or .edu — how does tax-exempt pricing work?', answer: 'Select your organization type when requesting a screening. If the filmmaker offers a reduced rate, it appears automatically. <a href="articles/tax-exempt.html">Read the full guide &rarr;</a>' }
+            ],
+            help: [
+                { id: 'cant-access', question: 'I can\'t access my ticket or VOD', answer: 'Check your email (including spam) for a GATHR confirmation with your access link. Or log into <a href="https://gathr.com" target="_blank">gathr.com</a> with the email you used to purchase. Still can\'t find it? Use the form below.' },
+                { id: 'vod-not-playing', question: 'My VOD rental isn\'t playing', answer: 'Make sure your rental window is still active, try Chrome or Firefox in incognito mode, and check your internet connection. If you\'re trying to watch on a TV, <a href="articles/casting-to-tv.html">see our TV setup guide</a>.' },
+                { id: 'viewing-window', question: 'How long do I have to watch my VOD rental?', answer: 'Most rentals give you 72 hours from the moment you press play. The clock doesn\'t start until you actually begin watching. <a href="articles/viewing-window.html">Read the full guide &rarr;</a>' },
+                { id: 'casting-to-tv', question: 'How do I watch on my TV?', answer: 'The easiest way: laptop + HDMI cable + Chrome. Open your rental, go full-screen, done. <a href="articles/casting-to-tv.html">See all methods (Chromecast, AirPlay, etc.) &rarr;</a>' },
+                { id: 'refund', question: 'I need a refund', answer: 'Cancelled events get automatic full refunds. VOD rentals are refundable if you haven\'t started watching. For ticket purchases, contact us before the event. Email <a href="mailto:support@gathr.com">support@gathr.com</a>.' },
+                { id: 'screening-help', question: 'I\'m hosting a screening and need help', answer: 'Check that your HDMI cable is HDCP-compliant, use Chrome, and make sure you\'re connected to the internet. Check your email for screening access instructions sent before your event.' }
+            ]
+        };
+        let faqConfig = {
+            filmmaker: { fit: true, cost: true, requirements: true, 'delivery-specs': true, screenings: true, exclusive: true, payouts: true },
+            host: { types: true, cost: true, discount: true, equipment: true, 'specific-film': true, 'change-screening': true, 'tax-exempt': true },
+            help: { 'cant-access': true, 'vod-not-playing': true, 'viewing-window': true, 'casting-to-tv': true, refund: true, 'screening-help': true }
+        };
 
         // Load weekly report data (new questions from email log)
         let weeklyReport = {
@@ -1431,7 +1739,8 @@
 
         // Initialize
         renderTutorials();
-        loadFAQs();
+        renderFAQs();  // Render immediately from inline data
+        loadFAQs();    // Then try to load from JSON (will re-render if successful)
     </script>
 </body>
 </html>
