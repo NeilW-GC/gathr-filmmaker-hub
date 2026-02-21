@@ -45,7 +45,7 @@
     {
       "id": "cost",
       "question": "How much does it cost?",
-      "answer": "Each filmmaker sets their own fees. Non-theatrical screenings typically range from $150-$800+ depending on the film and your organization type. You'll see the exact fee when you request a screening."
+      "answer": "Each filmmaker sets their own fees. Non-theatrical screenings typically range from $150-$800+ depending on the film and your organization type. You'll see the exact fee when you request a screening. <a href=\"https://support.gathr.com/what-are-the-fees\" target=\"_blank\">What are the fees? &rarr;</a>"
     },
     {
       "id": "discount",
@@ -77,7 +77,7 @@
     {
       "id": "cant-access",
       "question": "I can't access my ticket or VOD",
-      "answer": "Check your email (including spam) for a GATHR confirmation with your access link. Or log into <a href=\"https://gathr.com\" target=\"_blank\">gathr.com</a> with the email you used to purchase. Still can't find it? Use the form below."
+      "answer": "Go to <a href=\"https://gathr.com/watch\" target=\"_blank\">gathr.com/watch</a> and enter the email you used to purchase. You can also check your inbox (including spam) for a GATHR confirmation with your access link. Still can't find it? Use the form below."
     },
     {
       "id": "vod-not-playing",
