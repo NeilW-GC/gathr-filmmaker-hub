@@ -1696,13 +1696,27 @@
         }
 
         // Navigation
+        const logoLabels = {
+            filmmaker: 'Filmmaker Hub',
+            host: 'Host Hub',
+            help: 'Help Hub'
+        };
+
+        function updateLogo(section) {
+            const label = document.getElementById('logo-label');
+            label.textContent = logoLabels[section] || 'Filmmaker Hub';
+            label.className = section === 'host' ? 'host-mode' : section === 'help' ? 'help-mode' : '';
+            document.title = 'GATHR ' + (logoLabels[section] || 'Filmmaker Hub');
+        }
+
         function showSection(section) {
             document.getElementById('main-view').style.display = 'none';
             document.getElementById('filmmaker-section').classList.remove('active');
             document.getElementById('host-section').classList.remove('active');
             document.getElementById('help-section').classList.remove('active');
-            
+
             document.getElementById(section + '-section').classList.add('active');
+            updateLogo(section);
             window.scrollTo(0, 0);
         }
 
@@ -1711,6 +1725,7 @@
             document.getElementById('filmmaker-section').classList.remove('active');
             document.getElementById('host-section').classList.remove('active');
             document.getElementById('help-section').classList.remove('active');
+            updateLogo(null);
             window.scrollTo(0, 0);
         }
 
