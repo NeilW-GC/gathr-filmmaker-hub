@@ -34,6 +34,11 @@
       "id": "payouts",
       "question": "How do payouts work?",
       "answer": "GATHR pays NET 7 — your net payout is processed within 7 days after a completed screening or closed VOD rental, via Bill.com. <a href=\"articles/payouts.html\">Read the full payout guide &rarr;</a>"
+    },
+    {
+      "id": "vod",
+      "question": "Can I offer VOD after my screening?",
+      "answer": "Yes. After your screening, go to Event Management → Video On Demand, toggle it on, paste your Vimeo recording URL, set a price and dates, and save. You can also offer it free to everyone who attended. <a href=\"articles/vod-after-screening.html\">Step-by-step VOD guide &rarr;</a>"
     }
   ],
   "host": [

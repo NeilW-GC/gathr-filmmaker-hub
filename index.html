@@ -806,6 +806,7 @@
         .article-card-thumb.best-practices { background: linear-gradient(135deg, #1a2a3a 0%, #0d171f 100%); }
         .article-card-thumb.case-studies { background: linear-gradient(135deg, #3a2a1a 0%, #1f170d 100%); }
         .article-card-thumb.misc { background: linear-gradient(135deg, #2a2a3a 0%, #17171f 100%); }
+        .article-card-thumb.vod { background: linear-gradient(135deg, #1a2a1a 0%, #0d1a0d 100%); }
 
         .article-card-thumb .thumb-icon {
             width: 56px;
@@ -822,6 +823,7 @@
         .article-card-thumb.best-practices .thumb-icon { background: rgba(96, 165, 250, 0.15); }
         .article-card-thumb.case-studies .thumb-icon { background: rgba(251, 191, 36, 0.15); }
         .article-card-thumb.misc .thumb-icon { background: rgba(148, 163, 184, 0.15); }
+        .article-card-thumb.vod .thumb-icon { background: rgba(52, 211, 153, 0.15); }
 
         .article-card-body {
             padding: 16px;
@@ -843,6 +845,7 @@
         .article-card-thumb.best-practices + .article-card-body .article-tag { color: #60a5fa; }
         .article-card-thumb.case-studies + .article-card-body .article-tag { color: #fbbf24; }
         .article-card-thumb.misc + .article-card-body .article-tag { color: #94a3b8; }
+        .article-card-thumb.vod + .article-card-body .article-tag { color: #34d399; }
 
         .article-card-body h4 {
             font-size: 0.95rem;
@@ -1093,6 +1096,17 @@
                             <span class="article-tag">Misc.</span>
                             <h4>Additional Resources</h4>
                             <p>Delivery specs, tax info, and other useful references</p>
+                            <span class="read-link">Read article <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+                        </div>
+                    </a>
+                    <a href="articles/vod-after-screening.html" class="article-card">
+                        <div class="article-card-thumb vod">
+                            <div class="thumb-icon">🎬</div>
+                        </div>
+                        <div class="article-card-body">
+                            <span class="article-tag">VOD</span>
+                            <h4>Enable VOD After Your Screening</h4>
+                            <p>Turn your screening event into an on-demand rental</p>
                             <span class="read-link">Read article <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
                         </div>
                     </a>
@@ -1618,7 +1632,8 @@
                 { id: 'delivery-specs', question: 'What are the delivery specs for uploading my film?', answer: 'You need a 1080p+ Vimeo link (or HLS URL), an SRT subtitle file, a high-res poster, stills, and metadata. Allow 3-5 business days after delivering everything. <a href="articles/delivery-specs.html">Read the full delivery guide &rarr;</a>' },
                 { id: 'screenings', question: 'How do screenings work?', answer: 'Three types: Theatrical On Demand (fans request screenings at local theaters), Non-Theatrical (schools, churches, etc. book your film), and VOD (audiences rent directly). You control pricing on all of them.' },
                 { id: 'exclusive', question: 'Do I need to give GATHR exclusive rights?', answer: 'No. GATHR is non-exclusive. You can distribute your film through other channels simultaneously.' },
-                { id: 'payouts', question: 'How do payouts work?', answer: 'GATHR pays NET 7 — your net payout is processed within 7 days after a completed screening or closed VOD rental, via Bill.com. <a href="articles/payouts.html">Read the full payout guide &rarr;</a>' }
+                { id: 'payouts', question: 'How do payouts work?', answer: 'GATHR pays NET 7 — your net payout is processed within 7 days after a completed screening or closed VOD rental, via Bill.com. <a href="articles/payouts.html">Read the full payout guide &rarr;</a>' },
+                { id: 'vod', question: 'Can I offer VOD after my screening?', answer: 'Yes. After your screening, go to Event Management → Video On Demand, toggle it on, paste your Vimeo recording URL, set a price and dates, and save. You can also offer it free to everyone who attended. <a href="articles/vod-after-screening.html">Step-by-step VOD guide &rarr;</a>' }
             ],
             host: [
                 { id: 'types', question: 'What types of screenings can I host?', answer: 'Theatrical (at a movie theater, risk-free), Non-Theatrical (schools, churches, private venues), or Virtual (online with Zoom Q&A).' },
