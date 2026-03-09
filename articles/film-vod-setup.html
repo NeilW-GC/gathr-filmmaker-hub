@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Setting Up a Standalone Film VOD – GATHR Filmmaker Hub</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #0a0a0a;
+            --bg-card: #141414;
+            --bg-card-hover: #1a1a1a;
+            --text-primary: #f5f5f4;
+            --text-secondary: #a8a8a8;
+            --text-muted: #6b6b6b;
+            --accent: #7C5CFF;
+            --accent-hover: #9475FF;
+            --accent-light: rgba(124, 92, 255, 0.1);
+            --accent-border: rgba(124, 92, 255, 0.2);
+            --border: #2a2a2a;
+            --success: #4ade80;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-primary);
+            line-height: 1.8;
+            min-height: 100vh;
+        }
+        .container { max-width: 720px; margin: 0 auto; padding: 0 24px; }
+        header { padding: 24px 0; border-bottom: 1px solid var(--border); }
+        .header-inner { max-width: 720px; margin: 0 auto; padding: 0 24px; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-family: 'Fraunces', serif; font-size: 1.3rem; font-weight: 600; color: var(--text-primary); text-decoration: none; }
+        .logo span { color: var(--accent); }
+        .back-link { color: var(--text-secondary); text-decoration: none; font-size: 0.95rem; display: inline-flex; align-items: center; gap: 6px; transition: color 0.2s; }
+        .back-link:hover { color: var(--text-primary); }
+        article { padding: 60px 0 80px; }
+        .breadcrumb { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 32px; }
+        .breadcrumb a { color: var(--text-secondary); text-decoration: none; }
+        .breadcrumb a:hover { color: var(--accent); }
+        h1 { font-family: 'Fraunces', serif; font-size: clamp(2rem, 4vw, 2.8rem); font-weight: 600; line-height: 1.2; margin-bottom: 16px; letter-spacing: -0.02em; }
+        .subtitle { font-size: 1.15rem; color: var(--text-secondary); margin-bottom: 48px; }
+        h2 { font-family: 'Fraunces', serif; font-size: 1.5rem; font-weight: 600; margin-top: 48px; margin-bottom: 16px; letter-spacing: -0.01em; }
+        p { font-size: 1.1rem; color: var(--text-secondary); margin-bottom: 20px; }
+        .step-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 16px; padding: 32px; margin-bottom: 24px; }
+        .step-card h3 { font-family: 'Fraunces', serif; font-size: 1.25rem; font-weight: 600; margin-bottom: 12px; color: var(--text-primary); }
+        .step-number { display: inline-block; width: 36px; height: 36px; background: var(--accent); color: white; border-radius: 50%; text-align: center; line-height: 36px; font-weight: 600; font-size: 1rem; margin-right: 12px; flex-shrink: 0; }
+        .step-header { display: flex; align-items: center; margin-bottom: 12px; }
+        .step-card p { font-size: 1.05rem; margin-bottom: 12px; }
+        .step-card p:last-child { margin-bottom: 0; }
+        .highlight-box { background: linear-gradient(135deg, var(--accent-light) 0%, rgba(124, 92, 255, 0.02) 100%); border: 1px solid var(--accent-border); border-radius: 12px; padding: 24px 28px; margin: 32px 0; }
+        .highlight-box h4 { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent); margin-bottom: 10px; }
+        .highlight-box p { color: var(--text-primary); font-size: 1.05rem; margin-bottom: 0; }
+        .related-link {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 20px 24px;
+            margin: 32px 0;
+            text-decoration: none;
+            color: var(--text-primary);
+            transition: border-color 0.2s, background 0.2s;
+        }
+        .related-link:hover { border-color: var(--accent-border); background: var(--bg-card-hover); }
+        .related-link-icon { font-size: 1.5rem; flex-shrink: 0; }
+        .related-link-text p { color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 0; }
+        .related-link-text strong { display: block; color: var(--text-primary); font-size: 1.05rem; margin-bottom: 2px; }
+        .related-link svg { margin-left: auto; flex-shrink: 0; color: var(--text-muted); }
+        .help-box { background: var(--bg-card); border: 1px solid var(--border); border-radius: 16px; padding: 32px; text-align: center; margin-top: 48px; }
+        .help-box h3 { font-family: 'Fraunces', serif; font-size: 1.3rem; font-weight: 600; margin-bottom: 12px; }
+        .help-box p { color: var(--text-secondary); margin-bottom: 20px; }
+        .help-box a { color: var(--accent); font-weight: 500; text-decoration: none; font-size: 1.05rem; }
+        .help-box a:hover { text-decoration: underline; }
+        footer { border-top: 1px solid var(--border); padding: 32px 0; text-align: center; }
+        footer p { color: var(--text-muted); font-size: 0.85rem; }
+        footer a { color: var(--text-secondary); text-decoration: none; }
+        footer a:hover { color: var(--text-primary); }
+        a { color: var(--accent); }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-inner">
+            <a href="../index.html" class="logo">GATHR <span>Filmmaker Hub</span></a>
+            <a href="../index.html" class="back-link">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+                Back to Hub
+            </a>
+        </div>
+    </header>
+
+    <article>
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">Hub</a> → <a href="../index.html" onclick="localStorage.setItem('openSection','filmmaker')">Filmmakers</a> → Setting Up a Film VOD
+            </div>
+
+            <h1>Setting Up a Standalone Film VOD</h1>
+            <p class="subtitle">Offer your film as a rental on GATHR — not tied to any specific event. Set your price, choose your window, and publish.</p>
+
+            <div class="highlight-box">
+                <h4>The short version</h4>
+                <p>Go to <strong>Film Management → Video on Demand → Advanced Settings</strong>, set your price and dates, upload a cover photo, and save. It publishes automatically.</p>
+            </div>
+
+            <p>A standalone Film VOD lets any viewer rent your film at any time — it's not attached to a screening event. Think of it as your film's always-on rental option. You control the price, the viewing window, and when it's available.</p>
+
+            <h2>Before you start</h2>
+
+            <div class="step-card">
+                <p>Have these ready before you go into your dashboard:</p>
+                <p>• <strong>Your film's Vimeo or HLS URL</strong> — this is set separately in Film Playback Settings, not in the VOD setup itself.</p>
+                <p>• <strong>A VOD cover photo</strong> — high-res, 16:9 aspect ratio. This is what viewers see on the GATHR Movies TV app. Different from your film poster — think of it as a banner image.</p>
+                <p>• <strong>Your rental price</strong> — what you want to charge per rental.</p>
+                <p>• <strong>Start date</strong> (and optionally an end date) — when rentals open and close.</p>
+            </div>
+
+            <h2>Step-by-step setup</h2>
+
+            <div class="step-card">
+                <div class="step-header">
+                    <span class="step-number">1</span>
+                    <h3>Go to Film Management → Video on Demand</h3>
+                </div>
+                <p>Log into your GATHR account. From your filmmaker dashboard, select your film, then click the <strong>Video on Demand</strong> tab. From there, click into <strong>Advanced Settings</strong>.</p>
+            </div>
+
+            <div class="step-card">
+                <div class="step-header">
+                    <span class="step-number">2</span>
+                    <h3>Set your rental price</h3>
+                </div>
+                <p>Enter the price viewers will pay to rent your film. You can also enable <strong>Pay It Forward ticketing</strong> here if your film supports it — this lets viewers pay more than the asking price to support your work.</p>
+                <p>GATHR takes a 15% commission per transaction (capped at $25), plus Stripe's payment processing fee (2.9% + $0.30). Your net payout is processed on the NET 7 schedule. <a href="payouts.html">Learn more about payouts →</a></p>
+            </div>
+
+            <div class="step-card">
+                <div class="step-header">
+                    <span class="step-number">3</span>
+                    <h3>Set your start and end dates</h3>
+                </div>
+                <p>Choose when your VOD opens for rental. Set an <strong>End Date</strong> if you want it to close on a specific date — or leave it open-ended if you want it available indefinitely.</p>
+            </div>
+
+            <div class="step-card">
+                <div class="step-header">
+                    <span class="step-number">4</span>
+                    <h3>Configure the rental window (optional)</h3>
+                </div>
+                <p>Under video access settings, you can set:</p>
+                <p>• <strong>Rental Period</strong> — how many days a viewer has to start watching after purchase (e.g., 30 days to press play).</p>
+                <p>• <strong>Rental Duration</strong> — how many hours to finish the film once they press play (e.g., 72 hours).</p>
+                <p>• <strong>Indefinite Access</strong> — skip the time limit entirely and give viewers unlimited access.</p>
+                <p>If you leave these at defaults, GATHR uses its standard rental window.</p>
+            </div>
+
+            <div class="step-card">
+                <div class="step-header">
+                    <span class="step-number">5</span>
+                    <h3>Upload your VOD cover photo</h3>
+                </div>
+                <p>Upload a high-resolution image in <strong>16:9 aspect ratio</strong>. This is the thumbnail that appears in the GATHR Movies TV app. It's separate from your film poster — aim for a cinematic still or key art that works as a wide banner image.</p>
+            </div>
+
+            <div class="step-card">
+                <div class="step-header">
+                    <span class="step-number">6</span>
+                    <h3>Save — it publishes automatically</h3>
+                </div>
+                <p>Hit save. Your Film VOD goes live on your start date with no additional steps. Viewers can find it on your film's page and through the GATHR Movies app.</p>
+            </div>
+
+            <h2>Advanced options</h2>
+
+            <div class="step-card">
+                <p>Once your VOD is live, you can also configure:</p>
+                <p>• <strong>Pre-orders</strong> — let viewers purchase before the start date. They get a confirmation email and a notification when it's available.</p>
+                <p>• <strong>Geo-blocking</strong> — restrict or allow access by country using a whitelist or blacklist.</p>
+                <p>• <strong>Custom pre-roll video</strong> — play a short Vimeo clip before the film starts (must be a public Vimeo URL with embedding enabled).</p>
+                <p>• <strong>Hide from profile</strong> — keep the VOD unlisted but shareable via a direct link.</p>
+                <p>• <strong>Follow-up emails</strong> — automatically send a message to viewers after they finish watching.</p>
+                <p>For the full technical reference, see <a href="https://support.gathr.com/how-to-create-and-manage-a-film-video-on-demand" target="_blank">support.gathr.com →</a></p>
+            </div>
+
+            <h2>Common questions</h2>
+
+            <div class="step-card">
+                <h3>What's the difference between this and event VOD?</h3>
+                <p>A <strong>standalone Film VOD</strong> is always-on — any viewer can rent your film at any time through your film's page. An <strong>event VOD</strong> is tied to a specific screening: you attach the recording of that event and offer it to attendees or the public for a limited window. They're set up in different places and serve different purposes.</p>
+            </div>
+
+            <div class="step-card">
+                <h3>Can I change the price after it goes live?</h3>
+                <p>Yes. Go back to Film Management → Video on Demand → Advanced Settings and update the price. Changes take effect immediately. Viewers who already purchased at the old price are not affected.</p>
+            </div>
+
+            <div class="step-card">
+                <h3>Where do viewers find my VOD?</h3>
+                <p>On your film's page on GATHR and through the GATHR Movies TV app. If you've hidden it from your profile, viewers can only access it via direct link.</p>
+            </div>
+
+            <a href="vod-after-screening.html" class="related-link">
+                <span class="related-link-icon">🎬</span>
+                <div class="related-link-text">
+                    <strong>Enable VOD After a Specific Screening</strong>
+                    <p>Attach a VOD to a screening event you've already run</p>
+                </div>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+
+            <div class="help-box">
+                <h3>Need help with your Film VOD?</h3>
+                <p>Email us with your film name and what you're trying to set up.</p>
+                <a href="mailto:support@gathr.com">support@gathr.com</a>
+            </div>
+        </div>
+    </article>
+
+    <footer>
+        <div class="container">
+            <p>
+                <a href="https://gathr.com">GATHR</a> ·
+                <a href="../index.html">Filmmaker Hub</a> ·
+                <a href="mailto:support@gathr.com">support@gathr.com</a>
+            </p>
+        </div>
+    </footer>
+</body>
+</html>
